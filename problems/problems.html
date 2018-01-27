@@ -1,0 +1,40 @@
+<h1>problems page</h1>
+
+<div ng-if='vm.show.allProblems'>
+  <button ng-click='vm.showNewQuestionForm()'>add new question</button>
+
+  <div>
+    <div ng-repeat='p in vm.problems | orderBy: "-created_at"'>
+      <a ng-click='vm.showProblem(p)'>{{p.statement}}</a>
+      <button ng-click='vm.editProblem(p)'>edit</button>
+      <button ng-click='vm.deleteProblem(p)'>delete</button>
+    </div>
+  </div>
+</div>
+
+
+
+<div ng-if='vm.show.singleProblem'>
+  <h2>Problem: </h2>
+  {{vm.problem.statement}}
+  <p ng-repeat='a in vm.problem.answers'>
+    <span ng-if='a.correct' class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+    <span ng-if='!a.correct' class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+    {{a.statement}}
+  </p>
+</div>
+
+
+
+<div ng-if='vm.show.newProblemForm'>
+  <form name='vm.newProblemForm'>
+    Question: <input type='text' ng-model='vm.problem.statement' required>
+    <div ng-repeat='answer in vm.problem.answers'>
+      Answer: <input type='text' ng-model='answer.statement' required>
+      <input type='checkbox' ng-model='answer.correct'>
+      <button ng-click='vm.removeAnswerInput($index)'>Remove</button>
+    </div>
+    <button ng-click='vm.addAnAnswerInput()'>Add another answer</button>
+    <button ng-click='vm.updateProblem()'>Update</button>
+  </form>
+</div>
