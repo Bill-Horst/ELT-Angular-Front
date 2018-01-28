@@ -1,64 +1,76 @@
+
+<!-- ++++++++++++++++++++++++++ ALL PROBLEMS VIEW ++++++++++++++++++++++++++ -->
 <div ng-if='vm.show.allProblems'>
-  <h1>All Problems</h1>
-  <button ng-click='vm.showNewQuestionForm()'>add new question</button>
-  <div>
-    <div ng-repeat='p in vm.problems | orderBy: "-created_at"'>
-      <a ng-click='vm.showProblem(p)'>{{p.statement}}</a>
-      <button ng-click='vm.editProblem(p)'>edit</button>
-      <button ng-click='vm.deleteProblem(p)'>delete</button>
-    </div>
+  <h1 class='text-center'>All Problems</h1>
+  <div class='problem-nav-buttons'>
+    <button class='btn btn-primary' ng-click='vm.showNewQuestionForm()'>Add a problem</button>
   </div>
-  <!-- <div id='problem-grid' ui-grid='vm.gridOptions' ui-grid-pagination></div> -->
+  <div id='problem-grid' ui-grid='vm.gridOptions' ui-grid-pagination></div>
 </div>
 
 
 
+<!-- ++++++++++++++++++++++++++ SINGLE PROBLEM VIEW ++++++++++++++++++++++++++ -->
 <div ng-if='vm.show.singleProblem'>
-  <h1>Selected Problem</h1>
-  {{vm.problem.statement}}
-  <p ng-repeat='a in vm.problem.answers'>
-    <span ng-if='a.correct' class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-    <span ng-if='!a.correct' class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-    {{a.statement}}
-  </p>
-</div>
+  <h1 class='text-center'>Selected Problem</h1>
 
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">{{vm.problem.statement}}</h3>
+    </div>
+    <div class="panel-body">
+      <p ng-repeat='ans in vm.problem.answers'>
+        <span ng-if='ans.correct' class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span>
+        <span ng-if='!ans.correct' class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+        {{ans.statement}}
+      </p>
+    </div>
+    <div class="panel-footer">
+      <button class='btn btn-info' ng-click='vm.editProblem(vm.problem)'>edit</button>
+      <button class='btn btn-danger' ng-click='vm.deleteProblem(vm.problem)'>delete</button></div>
+    </div>
 
-
-<div ng-if='vm.show.problemForm' class='problem-form'>
-
-  <h1 class='text-center'>New Problem</h1>
-  <div class='form-fields'>
-    <form name='vm.problemForm'>
-
-      <div class='input-group question-input'>
-        <label class='sr-only'>Question</label>
-        <p class='text-muted'>Question<p>
-        <input type='text' ng-model='vm.problem.statement' class='form-control' required>
-      </div>
-
-      <br />
-
-      <div ng-repeat='answer in vm.problem.answers'>
-      <p class='text-muted'>Answer<p>
-        <div class='input-group'>
-          <label class='sr-only'>Answer</label>
-          <span class="input-group-addon">
-            <input type="checkbox" title='Check correct answers' ng-model='answer.correct'>
-          </span>
-          <input type='text' ng-model='answer.statement' class='form-control' required>
-          <span class='input-group-button'>
-            <button class='btn btn-danger' title='Remove' type='button' ng-click='vm.removeAnswerInput($index, answer.id)'>X</button>
-          </span>
-        </div>
-        <br />
-
-      </div>
-
-      <button ng-if='vm.problem.answers.length < 5' ng-click='vm.addAnAnswerInput()' class='btn btn-default'>Add another answer choice</button>
-      <button ng-if='vm.problemForm.$valid' ng-click='vm.updateProblem()' class='btn btn-default'>Update</button>
-
-    </form>
   </div>
 
-</div>
+
+  <!-- ++++++++++++++++++++++++++ PROBLEM FORM ++++++++++++++++++++++++++ -->
+  <div ng-if='vm.show.problemForm' class='problem-form'>
+    <h1 ng-if='!vm.problem.id' class='text-center'>Create New Problem</h1>
+    <h1 ng-if='vm.problem.id' class='text-center'>Update Problem</h1>
+    <div class='problem-nav-buttons'>
+      <button class='btn btn-primary' ng-click='vm.showAllProblems()'><span class='glyphicon glyphicon-arrow-left'></span> Back to all problems</button>
+    </div>
+    <div class='form-fields'>
+      <form name='vm.problemForm'>
+
+        <div class='input-group question-input'>
+          <label class='sr-only'>Question</label>
+          <p><span class="label label-default">Question</span><p>
+            <input type='text' ng-model='vm.problem.statement' class='form-control' required>
+          </div>
+
+          <br />
+
+          <div ng-repeat='answer in vm.problem.answers'>
+            <p class='text-muted'><span class="label label-default">Answer</span><p>
+              <div class='input-group'>
+                <label class='sr-only'>Answer</label>
+                <span class="input-group-addon">
+                  <input type="checkbox" title='Check correct answers' ng-model='answer.correct'>
+                </span>
+                <input type='text' ng-model='answer.statement' class='form-control' required>
+                <span class='input-group-button'>
+                  <button class='btn btn-danger' title='Remove' type='button' ng-click='vm.removeAnswerInput($index, answer.id)'>X</button>
+                </span>
+              </div>
+              <br />
+
+            </div>
+
+            <button ng-if='vm.problem.answers.length < 5' ng-click='vm.addAnAnswerInput()' class='btn btn-primary'>Add another answer choice</button>
+            <button ng-if='vm.problemForm.$valid' ng-click='vm.updateProblem()' class='btn btn-primary'>Update</button>
+
+          </form>
+        </div>
+
+      </div>

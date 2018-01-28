@@ -5,21 +5,21 @@
   .module('elt-app')
   .controller('problemController', Controller);
 
-  function Controller($scope, $http, Service) {
+  Controller.$inject = ['$scope','Service'];
+
+  function Controller($scope, Service) {
     let vm = this;
 
     // properties
-    // vm.gridOptions = {
-    //   paginationPageSizes: [10, 20, 30, 50, 100],
-    //   paginationPageSize: 10,
-    //   enableFiltering: true,
-    //   columnDefs: getColumnDefs(),
-    //   enableVerticalScrollbar: false,
-    //   onRegisterApi: function (gridApi) {
-    //     this.gridApi = gridApi;
-    //     console.log(this.gridApi);
-    //   }
-    // }
+    vm.gridOptions = {
+      paginationPageSizes: [10, 20, 30, 50, 100],
+      paginationPageSize: 10,
+      enableFiltering: true,
+      columnDefs: getColumnDefs(),
+      onRegisterApi: function (gridApi) {
+        this.gridApi = gridApi;
+      }
+    }
     vm.problems = [];
     vm.show = {
       allProblems: true,
@@ -36,6 +36,7 @@
     vm.initController = initController;
     vm.removeAnswerInput = removeAnswerInput;
     vm.showProblem = showProblem;
+    vm.showAllProblems = showAllProblems;
     vm.updateProblem = updateProblem;
 
     initController();
@@ -65,13 +66,13 @@
     function getProblems() {
       Service.get('problems').then(function(response) {
         vm.problems = response;
-        // vm.gridOptions.data = vm.problems;
+        vm.gridOptions.data = vm.problems;
       });
     }
 
-    function showProblem(problem) {
+    function showProblem(id) {
       vm.show.singleProblem = true;
-      Service.get('problems/'+problem.id).then(function(response) {
+      Service.get('problems/'+id).then(function(response) {
         vm.problem = response;
       });
     }
@@ -156,12 +157,26 @@
       });
     }
 
-    // function getColumnDefs() {
-    //   return [
-    //     { field: 'statement', displayName: 'Statement', width: '70%' },
-    //     { field: 'created_at', displayName: 'created_at', width: '30%' }
-    //   ]
-    // }
+    function showAllProblems() {
+      vm.show = {};
+      vm.show.allProblems = true;
+    }
+
+    function getColumnDefs() {
+      return [
+        { field: 'statement', displayName: 'Statement', width: '70%', cellTemplate: getStatementCellTemplate('statement') },
+        { field: 'created_at', displayName: 'Created', width: '30%', cellTemplate: getStatementCellTemplate('created_at'), sort: { direction: 'desc', priority: 0 } }
+      ]
+    }
+
+    function getStatementCellTemplate(column) {
+      if(column === 'statement') {
+        return `<div class="ui-grid-cell-contents"><a ng-click="grid.appScope.vm.showProblem(row.entity.id)">{{grid.getCellValue(row, col)}}</a></div>`;
+      } else if(column === 'created_at') {
+        return `<div class="ui-grid-cell-contents">{{grid.getCellValue(row, col) | date:"MM/dd/yyyy 'at' h:mma" }}</div>`;
+      }
+    }
+
 
   }
 

@@ -1,15 +1,19 @@
 body {
-  background-color: #ccdef9;
+  background-color: #f7f8ff;
 }
 
-.main-view {
-  padding-top: 50px;
+.main-view { /* (ui-view) */
+  padding: 80px 30px 30px 30px;
   width: 90%;
-  min-height: 800px;
   margin: auto;
-  background-color: lightblue;
 }
 
+/* problems */
+.problem-nav-buttons {
+  margin: 20px;
+}
+
+/* problem form */
 .problem-form .input-group {
   width: 90%;
 }
@@ -26,4 +30,40 @@ body {
 .problem-form .question-input {
   width: 100%;
   margin: auto;
+}
+
+/* view problem */
+
+.glyphicon-ok-circle {
+  color: green;
+}
+
+.glyphicon-remove-circle {
+  color: red;
+}
+
+/* grid */
+
+.ui-grid {
+  height: 394px;
+}
+
+abbr[title]{
+  border-bottom: none;
+  cursor: inherit;
+  text-decoration: none;
+}
+
+.ui-grid-pager-max-pages-number abbr[title] {
+  position: relative;
+  bottom: -4px;
+}
+
+.ui-grid-pager-max-pages-number {
+  position: relative;
+  bottom: 3px;
+}
+
+.ui-grid-contents-wrapper {
+  background-color: white;
 }
