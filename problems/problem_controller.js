@@ -171,7 +171,7 @@
 
     function getStatementCellTemplate(column) {
       if(column === 'statement') {
-        return `<div class="ui-grid-cell-contents"><a ng-click="grid.appScope.vm.showProblem(row.entity.id)">{{grid.getCellValue(row, col)}}</a></div>`;
+        return `<div class="ui-grid-cell-contents"><a class='problem-list-problem' ng-click="grid.appScope.vm.showProblem(row.entity.id)">{{grid.getCellValue(row, col)}}</a></div>`;
       } else if(column === 'created_at') {
         return `<div class="ui-grid-cell-contents">{{grid.getCellValue(row, col) | date:"MM/dd/yyyy 'at' h:mma" }}</div>`;
       }

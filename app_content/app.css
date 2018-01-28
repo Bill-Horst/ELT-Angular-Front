@@ -13,6 +13,10 @@ body {
   margin: 20px;
 }
 
+.problem-list-problem {
+  cursor: pointer;
+}
+
 /* problem form */
 .problem-form .input-group {
   width: 90%;

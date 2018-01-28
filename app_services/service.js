@@ -8,7 +8,8 @@
   function Service($http, $q) {
 
     let service = {};
-    let baseUrl = 'localhost:3000/';
+    // let baseUrl = 'https://frozen-sierra-32417.herokuapp.com/';
+    let baseUrl = 'http://localhost:3000/';
 
     service.get = get;
     service.post = post;
@@ -20,14 +21,14 @@
     function get(path) {
         return $http({
           method: 'GET',
-          url: 'http://localhost:3000/' + path
+          url: baseUrl + path
         }).then(handleSuccess, handleError);
     }
 
     function post(path, object) {
         return $http({
           method: 'POST',
-          url: 'http://localhost:3000/' + path,
+          url: baseUrl + path,
           data: object
         }).then(handleSuccess, handleError);
     }
@@ -35,7 +36,7 @@
     function update(path, object) {
         return $http({
           method: 'PUT',
-          url: 'http://localhost:3000/' + path,
+          url: baseUrl + path,
           data: object
         }).then(handleSuccess, handleError);
     }
@@ -43,7 +44,7 @@
     function destroy(path) {
         return $http({
           method: 'DELETE',
-          url: 'http://localhost:3000/' + path
+          url: baseUrl + path
         }).then(handleSuccess, handleError);
     }
 
