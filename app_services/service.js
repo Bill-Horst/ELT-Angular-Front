@@ -12,7 +12,7 @@
 
     service.get = get;
     service.post = post;
-    // service.update = update;
+    service.update = update;
     service.delete = destroy;
 
     return service;
@@ -32,12 +32,13 @@
         }).then(handleSuccess, handleError);
     }
 
-    // function update(path) {
-    //     return $http({
-    //       method: 'PUT',
-    //       url: 'http://localhost:3000/' + path
-    //     }).then(handleSuccess, handleError);
-    // }
+    function update(path, object) {
+        return $http({
+          method: 'PUT',
+          url: 'http://localhost:3000/' + path,
+          data: object
+        }).then(handleSuccess, handleError);
+    }
 
     function destroy(path) {
         return $http({

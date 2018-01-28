@@ -12,22 +12,52 @@
 
 </head>
 
-<body class='container' ng-app='elt-app'>
-  <header>
-    <ul class='nav nav-tabs'>
-      <li><a ui-sref='home'>Home</a></li>
-      <li><a ui-sref='problems'>Problems</a></li>
-    </ul>
-  </header>
+<body ng-app='elt-app'>
 
-  <main ui-view></main>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Home</a>
+      </div>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a ui-sref='problems'>Build Problems</a></li>
+          <li><a ui-sref='decks'>Build Decks</a></li>
+          <li><a ui-sref='playGames'>Play Games</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a ui-sref='gameIdeas'>Game Ideas</a></li>
+          <li><a ui-sref='blog'>Blog</a></li>
+          <button type="button" class="btn btn-default navbar-btn">Sign in</button>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+  <div class='main-view'>
+    <main ui-view></main>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-grid/4.2.2/ui-grid.css" />
+  <link href='https://cdnjs.cloudflare.com/ajax/libs/angular-ui-grid/4.2.2/ui-grid.eot' />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-grid/4.2.2/ui-grid.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.js"></script> -->
 
   <script src='app.js'></script>
+
+  <script src='app_content/scripts.js'></script>
 
   <script src='app_services/service.js'></script>
 

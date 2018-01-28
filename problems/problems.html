@@ -1,8 +1,6 @@
-<h1>problems page</h1>
-
 <div ng-if='vm.show.allProblems'>
+  <h1>All Problems</h1>
   <button ng-click='vm.showNewQuestionForm()'>add new question</button>
-
   <div>
     <div ng-repeat='p in vm.problems | orderBy: "-created_at"'>
       <a ng-click='vm.showProblem(p)'>{{p.statement}}</a>
@@ -10,12 +8,13 @@
       <button ng-click='vm.deleteProblem(p)'>delete</button>
     </div>
   </div>
+  <!-- <div id='problem-grid' ui-grid='vm.gridOptions' ui-grid-pagination></div> -->
 </div>
 
 
 
 <div ng-if='vm.show.singleProblem'>
-  <h2>Problem: </h2>
+  <h1>Selected Problem</h1>
   {{vm.problem.statement}}
   <p ng-repeat='a in vm.problem.answers'>
     <span ng-if='a.correct' class="glyphicon glyphicon-ok" aria-hidden="true"></span>
@@ -26,15 +25,40 @@
 
 
 
-<div ng-if='vm.show.newProblemForm'>
-  <form name='vm.newProblemForm'>
-    Question: <input type='text' ng-model='vm.problem.statement' required>
-    <div ng-repeat='answer in vm.problem.answers'>
-      Answer: <input type='text' ng-model='answer.statement' required>
-      <input type='checkbox' ng-model='answer.correct'>
-      <button ng-click='vm.removeAnswerInput($index)'>Remove</button>
-    </div>
-    <button ng-click='vm.addAnAnswerInput()'>Add another answer</button>
-    <button ng-click='vm.updateProblem()'>Update</button>
-  </form>
+<div ng-if='vm.show.problemForm' class='problem-form'>
+
+  <h1 class='text-center'>New Problem</h1>
+  <div class='form-fields'>
+    <form name='vm.problemForm'>
+
+      <div class='input-group question-input'>
+        <label class='sr-only'>Question</label>
+        <p class='text-muted'>Question<p>
+        <input type='text' ng-model='vm.problem.statement' class='form-control' required>
+      </div>
+
+      <br />
+
+      <div ng-repeat='answer in vm.problem.answers'>
+      <p class='text-muted'>Answer<p>
+        <div class='input-group'>
+          <label class='sr-only'>Answer</label>
+          <span class="input-group-addon">
+            <input type="checkbox" title='Check correct answers' ng-model='answer.correct'>
+          </span>
+          <input type='text' ng-model='answer.statement' class='form-control' required>
+          <span class='input-group-button'>
+            <button class='btn btn-danger' title='Remove' type='button' ng-click='vm.removeAnswerInput($index, answer.id)'>X</button>
+          </span>
+        </div>
+        <br />
+
+      </div>
+
+      <button ng-if='vm.problem.answers.length < 5' ng-click='vm.addAnAnswerInput()' class='btn btn-default'>Add another answer choice</button>
+      <button ng-if='vm.problemForm.$valid' ng-click='vm.updateProblem()' class='btn btn-default'>Update</button>
+
+    </form>
+  </div>
+
 </div>

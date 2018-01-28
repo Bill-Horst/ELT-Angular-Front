@@ -1,3 +1,29 @@
 body {
-  background-color: red;
+  background-color: #ccdef9;
+}
+
+.main-view {
+  padding-top: 50px;
+  width: 90%;
+  min-height: 800px;
+  margin: auto;
+  background-color: lightblue;
+}
+
+.problem-form .input-group {
+  width: 90%;
+}
+
+.problem-form .form-control {
+  width: 80%;
+}
+
+.problem-form .form-fields {
+  width: 80%;
+  margin: auto;
+}
+
+.problem-form .question-input {
+  width: 100%;
+  margin: auto;
 }
