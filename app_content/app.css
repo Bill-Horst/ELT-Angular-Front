@@ -1,5 +1,11 @@
+/*
+darkest: #042896 (navbar)
+middle: #bdc6ff (navbar words)
+lightest: #fafaff (background)
+*/
+
 body {
-  background-color: #f7f8ff;
+  background-color: #fafaff;
 }
 
 .main-view { /* (ui-view) */
@@ -8,13 +14,63 @@ body {
   margin: auto;
 }
 
+/* bootstrap overrides */
+.navbar-btn {
+  margin-right: 20px;
+}
+
+#navbar-bar {
+  background-color: #042896;
+}
+
+#navbar-bar a {
+  color: #bdc6ff;
+}
+
+.btn {
+  border-radius: 0;
+}
+
+.btn-primary {
+  background-image: linear-gradient(to bottom,#0c2cff 0,#3950e6 100%);
+  color: #fafaff;
+}
+
+.btn-primary:hover {
+  background-image: linear-gradient(to bottom,#3950e6 0,#0c2cff 100%);
+  background-color: #0c2cff;
+}
+
+.btn-primary:focus {
+  background-image: linear-gradient(to bottom,#0c2cff 0,#3950e6 100%);
+  background-color: #0c2cff;
+}
+
+.btn-primary:active:hover {
+  background-image: linear-gradient(to bottom,#0c2cff 0,#3950e6 100%);
+  background-color: #0c2cff;
+}
+
+.panel-heading {
+  background-image: linear-gradient(to bottom,#fafaff 0,#d1d6ff 100%) !important;
+}
+
+.panel-footer {
+  background-color: #d1d6ff;
+}
+
 /* problems */
+.problem-page-view {
+  color: #042896;
+}
 .problem-nav-buttons {
   margin: 20px;
 }
 
 .problem-list-problem {
   cursor: pointer;
+  color: inherit;
+  font-size: 1.2em;
 }
 
 /* problem form */
@@ -70,4 +126,16 @@ abbr[title]{
 
 .ui-grid-contents-wrapper {
   background-color: white;
+}
+
+.ui-grid-row:nth-child(odd) .ui-grid-cell {
+  background-color: #fafaff !important;
+}
+
+.ui-grid-row:nth-child(even) .ui-grid-cell {
+  background-color: #f0f3ff !important;
+}
+
+.ui-grid-top-panel {
+  background-image: linear-gradient(to bottom,#fafaff 0,#d1d6ff 100%) !important;
 }
