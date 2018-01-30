@@ -1,0 +1,35 @@
+.ui-grid {
+  height: 394px;
+}
+
+abbr[title]{
+  border-bottom: none;
+  cursor: inherit;
+  text-decoration: none;
+}
+
+.ui-grid-pager-max-pages-number abbr[title] {
+  position: relative;
+  bottom: -4px;
+}
+
+.ui-grid-pager-max-pages-number {
+  position: relative;
+  bottom: 3px;
+}
+
+.ui-grid-contents-wrapper {
+  background-color: white;
+}
+
+.ui-grid-row:nth-child(odd) .ui-grid-cell {
+  background-color: var(--lightcolor) !important;
+}
+
+.ui-grid-row:nth-child(even) .ui-grid-cell {
+  background-color: var(--rows) !important;
+}
+
+.ui-grid-top-panel {
+  background-image: linear-gradient(to bottom,var(--lightcolor) 0,var(--darkgrey) 100%) !important;
+}

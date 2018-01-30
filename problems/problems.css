@@ -1,0 +1,42 @@
+.problem-page-view {
+  color: var(--darkcolor);
+}
+
+.problem-nav-buttons {
+  margin: 20px;
+}
+
+.problem-list-problem {
+  cursor: pointer;
+  color: inherit;
+  font-size: 1.2em;
+}
+
+/* problem form */
+.problem-form .input-group {
+  width: 90%;
+}
+
+.problem-form .form-control {
+  width: 80%;
+}
+
+.problem-form .form-fields {
+  width: 80%;
+  margin: auto;
+}
+
+.problem-form .question-input {
+  width: 100%;
+  margin: auto;
+}
+
+/* view problem */
+
+.glyphicon-ok-circle {
+  color: green;
+}
+
+.glyphicon-remove-circle {
+  color: red;
+}

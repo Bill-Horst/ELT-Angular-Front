@@ -5,6 +5,8 @@
   .module('elt-app')
   .factory('Service', Service);
 
+  Service.$inject = ['$http', '$q'];
+
   function Service($http, $q) {
 
     let service = {};
@@ -58,23 +60,3 @@
   }
 
 })();
-
-// public get(path) {
-//   var endpoint = this.API_URL + path;
-//   return this.http.get(endpoint);
-// }
-//
-// public post(path:string,body:any) {
-//   var endpoint = this.API_URL + path;
-//   return this.http.post(endpoint,body);
-// }
-//
-// public delete(path:string){
-//   var endpoint = this.API_URL + path;
-//   return this.http.delete(endpoint);
-// }
-//
-// public update(path:string, body:any){
-//   var endpoint = this.API_URL + path;
-//   return this.http.put(endpoint,body);
-// }

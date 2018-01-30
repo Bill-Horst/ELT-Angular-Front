@@ -1,0 +1,43 @@
+.navbar-btn {
+  margin-right: 20px;
+}
+
+#navbar-bar {
+  background-color: var(--darkcolor);
+}
+
+#navbar-bar a {
+  color: var(--mediumcolor);
+}
+
+.btn {
+  border-radius: 0;
+}
+
+/* .btn-primary {
+  background-image: linear-gradient(to bottom,var(darkblue) 0,var(darkerblue) 100%);
+  color: var(--darkcolor);
+}
+
+.btn-primary:hover {
+  background-image: linear-gradient(to bottom,var(darkerblue) 0,var(darkblue) 100%);
+  background-color: var(darkblue);
+}
+
+.btn-primary:focus {
+  background-image: linear-gradient(to bottom,var(darkblue) 0,var(darkerblue) 100%);
+  background-color: var(darkblue);
+}
+
+.btn-primary:active:hover {
+  background-image: linear-gradient(to bottom,var(darkblue) 0,var(darkerblue) 100%);
+  background-color: var(darkblue);
+} */
+
+.panel-heading {
+  background-image: linear-gradient(to bottom,var(--lightcolor) 0,var(--darkgrey) 100%) !important;
+}
+
+.panel-footer {
+  background-image: linear-gradient(to bottom,var(--lightcolor) 0,var(--darkgrey) 100%) !important;
+}

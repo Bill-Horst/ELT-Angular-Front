@@ -11,8 +11,28 @@
     let vm = this;
 
     // properties
+    vm.gridOptions = {};
+    vm.problems = [];
+    vm.show = {};
+
+    // functions
+    vm.addAnAnswerInput = addAnAnswerInput;
+    vm.deleteProblem = deleteProblem;
+    vm.editProblem = editProblem;
+    vm.getProblems = getProblems;
+    vm.initController = initController;
+    vm.removeAnswerInput = removeAnswerInput;
+    vm.showAllProblems = showAllProblems;
+    vm.showNewQuestionForm = showNewQuestionForm;
+    vm.showProblem = showProblem;
+    vm.updateProblem = updateProblem;
+
+    // initialize controller
+    initController();
+
+    // initialize properties
     vm.gridOptions = {
-      paginationPageSizes: [10, 20, 30, 50, 100],
+      paginationPageSizes: false,
       paginationPageSize: 10,
       enableFiltering: true,
       columnDefs: getColumnDefs(),
@@ -20,29 +40,30 @@
         this.gridApi = gridApi;
       }
     }
-    vm.problems = [];
+
     vm.show = {
       allProblems: true,
       problemForm: false,
       singleProblem: false
     };
 
-    // functions
-    vm.addAnAnswerInput = addAnAnswerInput;
-    vm.showNewQuestionForm = showNewQuestionForm;
-    vm.deleteProblem = deleteProblem;
-    vm.editProblem = editProblem;
-    vm.getProblems = getProblems;
-    vm.initController = initController;
-    vm.removeAnswerInput = removeAnswerInput;
-    vm.showProblem = showProblem;
-    vm.showAllProblems = showAllProblems;
-    vm.updateProblem = updateProblem;
-
-    initController();
-
+    // define functions
     function initController() {
+      vm.loading = true;
       vm.getProblems();
+    }
+
+    function getProblems() {
+      Service.get('problems').then(function(response) {
+        vm.problems = response;
+        vm.gridOptions.data = vm.problems;
+        vm.loading = false;
+      });
+    }
+
+    function showAllProblems() {
+      vm.show = {};
+      vm.show.allProblems = true;
     }
 
     function showNewQuestionForm() {
@@ -61,13 +82,6 @@
           correct: false
         }
       ];
-    }
-
-    function getProblems() {
-      Service.get('problems').then(function(response) {
-        vm.problems = response;
-        vm.gridOptions.data = vm.problems;
-      });
     }
 
     function showProblem(id) {
@@ -127,6 +141,18 @@
       }
     }
 
+    function deleteProblem(problem) {
+      Service.delete('problems/'+problem.id).then(function(response) {
+        // use map to get the deleted object from vm.problems by its id
+        let deletedProblemIndex = vm.problems.map(function(prob) {
+          return prob.id
+        }).indexOf(problem.id);
+        if(deletedProblemIndex > -1) {
+          vm.problems.splice(deletedProblemIndex, 1);
+        }
+      });
+    }
+
     function addAnAnswerInput() {
       let newAnswer = {
         statement: '',
@@ -145,23 +171,6 @@
       vm.problem.answers.splice(index,1);
     }
 
-    function deleteProblem(problem) {
-      Service.delete('problems/'+problem.id).then(function(response) {
-        // use map to get the deleted object from vm.problems by its id
-        let deletedProblemIndex = vm.problems.map(function(prob) {
-          return prob.id
-        }).indexOf(problem.id);
-        if(deletedProblemIndex > -1) {
-          vm.problems.splice(deletedProblemIndex, 1);
-        }
-      });
-    }
-
-    function showAllProblems() {
-      vm.show = {};
-      vm.show.allProblems = true;
-    }
-
     function getColumnDefs() {
       return [
         { field: 'statement', displayName: 'Statement', width: '70%', cellTemplate: getStatementCellTemplate('statement') },
@@ -176,7 +185,6 @@
         return `<div class="ui-grid-cell-contents">{{grid.getCellValue(row, col) | date:"MM/dd/yyyy 'at' h:mma" }}</div>`;
       }
     }
-
 
   }
 
