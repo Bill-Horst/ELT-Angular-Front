@@ -81,12 +81,12 @@
 
     function getColumnDefs() {
       return [
-        { field: 'title', displayName: 'Game', width: '20%' },
-        { field: 'body', displayName: 'Intro', width: '35%' },
-        { field: 'gradeLevelRange', displayName: 'Grades', width: '10%' },
-        { field: 'studentCountRange', displayName: 'Students', width: '10%' },
-        { field: 'timeRange', displayName: 'Duration', width: '10%' },
-        { field: 'materials', displayName: 'Materials', width: '15%' }
+        { field: 'title', displayName: 'Game', width: '20%', enableFiltering: true },
+        { field: 'body', displayName: 'Intro', width: '35%', enableFiltering: false },
+        { field: 'gradeLevelRange', displayName: 'Grades', width: '10%', enableFiltering: false },
+        { field: 'studentCountRange', displayName: 'Students', width: '10%', enableFiltering: false },
+        { field: 'timeRange', displayName: 'Duration', width: '10%', enableFiltering: false },
+        { field: 'materials', displayName: 'Materials', width: '15%', enableFiltering: true }
 
       ]
     }
