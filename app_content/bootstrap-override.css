@@ -2,16 +2,18 @@
   margin-right: 20px;
 }
 
-#navbar-bar {
-  background-color: var(--darkcolor);
+.navbar-default, .navbar, #navbar-bar {
+  background-color: #26532b;
+  /* background-image: linear-gradient(to bottom,var(--darkcolor) 0,var(--lightcolor) 1) !important; */
 }
 
 #navbar-bar a {
-  color: var(--mediumcolor);
+  color: var(--lightcolor);
 }
 
 .btn {
   border-radius: 0;
+  border: none;
 }
 
 /* .btn-primary {

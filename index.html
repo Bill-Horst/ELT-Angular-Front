@@ -10,9 +10,9 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
   <!-- pieces css -->
-  <link href='app_content/loading-icon.css' rel='stylesheet' />
   <link href='app_content/reset.css' rel='stylesheet' />
   <link href='app_content/setup.css' rel='stylesheet' />
+  <link href='app_content/loading-icon.css' rel='stylesheet' />
   <link href='app_content/bootstrap-override.css' rel='stylesheet' />
   <link href='app_content/ui-grid.css' rel='stylesheet' />
   <!-- main app css -->
@@ -23,7 +23,7 @@
 
 <body ng-app='elt-app'>
 
-  <nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
+  <nav class="navbar navbar-default navbar-fixed-top">
     <div id='navbar-bar' class="container-fluid">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -32,7 +32,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <!-- <a class="navbar-brand" href="#">Home</a> -->
+        <!-- <a ng-class='{active: activeTab === "home"}' class='navbar-brand' ui-sref='home'>Home</a> -->
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -43,7 +43,7 @@
           <li ng-class="{active: activeTab === 'decks'}"><a ui-sref='decks'>Build Decks</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a ui-sref='gameIdeas'>Game Ideas</a></li>
+          <li ng-class="{active: activeTab === 'gameideas'}"><a ui-sref='gameideas'>Game Ideas</a></li>
           <li><a ui-sref='blog'>Blog</a></li>
           <button type="button" class="btn btn-default navbar-btn">Sign in</button>
         </ul>
@@ -75,5 +75,6 @@
   <!-- controllers -->
   <script src='home/home_controller.js'></script>
   <script src='problems/problem_controller.js'></script>
+  <script src='gameideas/gameideas_controller.js'></script>
 </body>
 </html>

@@ -23,6 +23,13 @@
       controller: 'problemController',
       controllerAs: 'vm',
       data: { activeTab: 'problems' }
+    })
+    .state('gameideas', {
+      url: '/gameideas',
+      templateUrl: 'gameideas/gameideas.html',
+      controller: 'gameideasController',
+      controllerAs: 'vm',
+      data: { activeTab: 'gameideas' }
     });
   }
 

@@ -1,14 +1,17 @@
 html {
 
-  --darkblue: #0c2cff; /* bootstrap button */
-  --darkerblue: #3950df; /* bootstrap button */
+  /* --darkblue:     #0c2cff; /* bootstrap button */ */
+  /* --darkerblue:   #3950df; /* bootstrap button */ */
+  /* --darkcolor:    #1f5701; /* darkest color for navbar */ */
+  /* --mediumcolor:  #aaed97; /* medium color for navbar words */ */
+  /* --lightcolor:   #f6fff9; /* lightest color for background */ */
 
-  --darkcolor: #1f5701; /* darkest color for navbar */
-  --mediumcolor: #aaed97; /* medium color for navbar words */
-  --lightcolor: #f6fff9; /* lightest color for background */
+  --darkcolor:    #26532b;
+  --mediumcolor:  #399e5a;
+  --lightcolor:   #e8fffe; /* background, row highlights */
 
-  --darkgrey: #d1d1d1; /* darker grey */
-  --rows: #ebfff6; /* darker color for rows */
+  --darkgrey: #63e2c6; /* darker grey */
+  --rows: #f4fcfc; /* very light for rows */
 }
 
 /* FOOTER */

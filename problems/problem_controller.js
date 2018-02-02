@@ -12,6 +12,7 @@
 
     // properties
     vm.gridOptions = {};
+    vm.loading = false;
     vm.problems = [];
     vm.show = {};
 
@@ -35,6 +36,7 @@
       paginationPageSizes: false,
       paginationPageSize: 10,
       enableFiltering: true,
+      enableColumnMenus: false,
       columnDefs: getColumnDefs(),
       onRegisterApi: function (gridApi) {
         this.gridApi = gridApi;
