@@ -1,0 +1,32 @@
+.gameideas-page-view {
+  color: var(--darkcolor);
+}
+
+.gameidea-nav-buttons {
+  margin: 20px;
+}
+
+.gameideas-list-gameideas {
+  cursor: pointer;
+  color: inherit;
+  font-size: 1.2em;
+}
+
+/* game ideas form */
+.gameideas-form .input-group {
+  width: 100%;
+}
+
+.label-default {
+  padding-bottom: 0px;
+  border-bottom-left-radius: 0;
+}
+
+.slider-div {
+  width: 100%;
+  background-color: white;
+  border-top-right-radius: .25em;
+  border-bottom-right-radius: .25em;
+  padding: 10px;
+  border: 1px solid lightgray;
+}

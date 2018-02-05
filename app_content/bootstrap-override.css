@@ -4,6 +4,9 @@
 
 .navbar-default, .navbar, #navbar-bar {
   background-color: #26532b;
+  font-family: "CrayonHandRegularW00-Rg", 'Fredericka the Great', cursive;
+  font-size: 1.15em;
+  text-transform: uppercase;
   /* background-image: linear-gradient(to bottom,var(--darkcolor) 0,var(--lightcolor) 1) !important; */
 }
 

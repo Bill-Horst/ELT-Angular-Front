@@ -19,6 +19,7 @@
   <link href='app_content/app.css' rel='stylesheet' />
   <!-- individual modules css -->
   <link href='problems/problems.css' rel='stylesheet' />
+  <link href='gameideas/gameideas.css' rel='stylesheet' />
 </head>
 
 <body ng-app='elt-app'>
@@ -40,10 +41,9 @@
         <ul class="nav navbar-nav">
           <li ng-class="{active: activeTab === 'home'}"><a ui-sref='home'>Home</a></li>
           <li ng-class="{active: activeTab === 'problems'}"><a ui-sref='problems'>Build Problems</a></li>
-          <li ng-class="{active: activeTab === 'decks'}"><a ui-sref='decks'>Build Decks</a></li>
+          <li ng-class="{active: activeTab === 'gameideas'}"><a ui-sref='gameideas'>Game Ideas</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li ng-class="{active: activeTab === 'gameideas'}"><a ui-sref='gameideas'>Game Ideas</a></li>
           <li><a ui-sref='blog'>Blog</a></li>
           <button type="button" class="btn btn-default navbar-btn">Sign in</button>
         </ul>
@@ -65,6 +65,11 @@
   <link href='https://cdnjs.cloudflare.com/ajax/libs/angular-ui-grid/4.2.2/ui-grid.eot' />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-grid/4.2.2/ui-grid.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angularjs-slider/6.4.3/rzslider.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angularjs-slider/6.4.3/rzslider.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
+  <link href="//db.onlinewebfonts.com/c/f782d9f98e0e5372e9068ca013e41e53?family=CrayonHandRegularW00-Rg" rel="stylesheet" type="text/css"/>
+
 
   <script src='app.js'></script>
   <script src='app_content/scripts.js'></script>
@@ -74,7 +79,9 @@
 
   <!-- controllers -->
   <script src='home/home_controller.js'></script>
-  <script src='problems/problem_controller.js'></script>
+  <script src='problems/problems_controller.js'></script>
+  <script src='problems/show_problem_controller.js'></script>
+  <script src='problems/problem_form_controller.js'></script>
   <script src='gameideas/gameideas_controller.js'></script>
 </body>
 </html>

@@ -1,0 +1,19 @@
+<div class='problem-page-view'>
+  <h1 class='text-center'>Selected Problem</h1>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">{{vm.problem.statement}}</h3>
+    </div>
+    <div class="panel-body">
+      <p ng-repeat='ans in vm.problem.answers'>
+        <span ng-if='ans.correct' class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span>
+        <span ng-if='!ans.correct' class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+        {{ans.statement}}
+      </p>
+    </div>
+    <div class="panel-footer">
+      <button class='btn btn-primary' ui-sref='problem_form({id: vm.problem.id})'>edit</button>
+      <button class='btn btn-danger' ng-click='vm.deleteProblem(vm.problem)'>delete</button>
+    </div>
+  </div>
+</div>

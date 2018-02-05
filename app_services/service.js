@@ -10,8 +10,8 @@
   function Service($http, $q) {
 
     let service = {};
-    let baseUrl = 'https://frozen-sierra-32417.herokuapp.com/';
-    // let baseUrl = 'http://localhost:3000/';
+    // let baseUrl = 'https://frozen-sierra-32417.herokuapp.com/';
+    let baseUrl = 'http://localhost:3000/';
 
     service.get = get;
     service.post = post;

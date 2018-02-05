@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-  .module('elt-app', ['ui.router','ui.grid','ui.bootstrap','ui.grid.pagination'])
+  .module('elt-app', ['ui.router','ui.grid','ui.bootstrap','ui.grid.pagination','rzModule'])
   .config(config)
   .run(run);
 
@@ -20,7 +20,21 @@
     .state('problems', {
       url: '/problems',
       templateUrl: 'problems/problems.html',
-      controller: 'problemController',
+      controller: 'problemsController',
+      controllerAs: 'vm',
+      data: { activeTab: 'problems' }
+    })
+    .state('problem', {
+      url: '/problem/:id',
+      templateUrl: 'problems/show_problem.html',
+      controller: 'showProblemController',
+      controllerAs: 'vm',
+      data: { activeTab: 'problems' }
+    })
+    .state('problem_form', {
+      url: '/problem_form/:id',
+      templateUrl: 'problems/problem_form.html',
+      controller: 'problemFormController',
       controllerAs: 'vm',
       data: { activeTab: 'problems' }
     })
