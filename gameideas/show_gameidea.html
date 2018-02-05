@@ -1,0 +1,18 @@
+<h1 class='text-center'>Selected Game Idea</h1>
+<button class='btn btn-primary gameidea-nav-buttons' ui-sref='gameideas'><span class='glyphicon glyphicon-arrow-left'></span> Back to all game ideas</button>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{vm.gameidea.title}}</h3>
+  </div>
+  <div class="panel-body">
+    <p>Best for {{vm.gameidea.minstudentcount}} to {{vm.gameidea.maxstudentcount}} students</p>
+    <p>Can last between {{vm.gameidea.mintime}} and {{vm.gameidea.maxtime}} minutes</p>
+    <p>Grade level(s): {{vm.gameidea.mingradelevel}} - {{vm.gameidea.maxgradelevel}}</p>
+    <p>Materials: {{vm.gameidea.materials}}</p>
+    <p>Body: {{vm.gameidea.body}}</p>
+  </div>
+  <div class="panel-footer">
+    <button class='btn btn-primary' ui-sref='gameidea_form({id: vm.gameidea.id})'>edit</button>
+    <button class='btn btn-danger' ng-click='vm.deleteGameidea(vm.gameidea)'>delete</button>
+  </div>
+</div>

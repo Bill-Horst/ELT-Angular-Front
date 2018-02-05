@@ -44,6 +44,34 @@
       controller: 'gameideasController',
       controllerAs: 'vm',
       data: { activeTab: 'gameideas' }
+    })
+    .state('gameidea', {
+      url: '/gameidea/:id',
+      templateUrl: 'gameideas/show_gameidea.html',
+      controller: 'showGameideaController',
+      controllerAs: 'vm',
+      data: { activeTab: 'gameideas' }
+    })
+    .state('gameidea_form', {
+      url: '/gameidea_form/:id',
+      templateUrl: 'gameideas/gameidea_form.html',
+      controller: 'gameideaFormController',
+      controllerAs: 'vm',
+      data: { activeTab: 'gameideas' }
+    })
+    .state('resources', {
+      url: '/resources',
+      templateUrl: 'resources/resources_home.html',
+      controller: 'resourcesController',
+      controllerAs: 'vm',
+      data: { activeTab: 'resources' }
+    })
+    .state('blog', {
+      url: '/blog',
+      templateUrl: 'blog/blog_home.html',
+      controller: 'blogController',
+      controllerAs: 'vm',
+      data: { activeTab: 'blog' }
     });
   }
 

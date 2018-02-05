@@ -1,10 +1,9 @@
 <div class='gameideas-page-view'>
 
-  <!-- ++++++++++++++++++++++++++ ALL GAMEIDEAS VIEW ++++++++++++++++++++++++++ -->
   <div ng-if='vm.show.allGameideas'>
     <h1 class='text-center'>All Games</h1>
     <div class='gameideas-nav-buttons'>
-      <button class='btn btn-primary gameidea-nav-buttons' ng-click='vm.showNewGameideasForm()'>Add a game idea</button>
+      <button class='btn btn-primary gameidea-nav-buttons' ui-sref='gameidea_form'>Add a game idea</button>
       <button class='btn btn-primary gameidea-nav-buttons' ng-click='vm.showAdvancedSearchForm()'>Advanced search</button>
     </div>
     <div id='gameidea-grid' ui-grid='vm.gridOptions' ui-grid-pagination>
@@ -14,96 +13,5 @@
       </div>
     </div>
   </div>
-
-
-
-  <!-- ++++++++++++++++++++++++++ SINGLE GAMEIDEA VIEW ++++++++++++++++++++++++++ -->
-  <div ng-if='vm.show.singleGameidea'>
-    <h1 class='text-center'>Selected Game Idea</h1>
-    <button class='btn btn-primary gameidea-nav-buttons' ng-click='vm.showAllGameideas()'><span class='glyphicon glyphicon-arrow-left'></span> Back to all game ideas</button>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">{{vm.gameidea.title}}</h3>
-      </div>
-      <div class="panel-body">
-        <p>Best for {{vm.gameidea.minstudentcount}} to {{vm.gameidea.maxstudentcount}} students</p>
-        <p>Can last between {{vm.gameidea.mintime}} and {{vm.gameidea.maxtime}} minutes</p>
-        <p>Grade level(s): {{vm.gameidea.mingradelevel}} - {{vm.gameidea.maxgradelevel}}</p>
-        <p>Materials: {{vm.gameidea.materials}}</p>
-        <p>Body: {{vm.gameidea.body}}</p>
-      </div>
-      <div class="panel-footer">
-        <button class='btn btn-primary' ng-click='vm.editGameidea(vm.gameidea)'>edit</button>
-        <button class='btn btn-danger' ng-click='vm.deleteGameidea(vm.gameidea)'>delete</button>
-      </div>
-    </div>
-  </div>
-
-
-  <!-- ++++++++++++++++++++++++++ GAMEIDEA FORM ++++++++++++++++++++++++++ -->
-  <div ng-if='vm.show.gameideasForm' class='gameideas-form'>
-    <h1 ng-if='!vm.gameidea.id' class='text-center'>Create New Game Idea</h1>
-    <h1 ng-if='vm.gameidea.id' class='text-center'>Update Game Idea</h1>
-    <div class='gameidea-nav-buttons'>
-      <button class='btn btn-primary' ng-click='vm.showAllGameideas()'><span class='glyphicon glyphicon-arrow-left'></span> Back to all game ideas</button>
-      <button class='btn btn-primary' ng-click='vm.showGameidea()'><span class='glyphicon glyphicon-arrow-left'></span> Back to {{vm.gameidea.title}}</button>
-    </div>
-    <div class='form-fields'>
-      <form name='vm.gameideaForm'>
-        <div class='input-group gameidea-input'>
-          <label class='sr-only'>Title</label>
-          <p><span class="label label-default">Title</span></p>
-          <input type='text' ng-model='vm.gameidea.title' class='form-control' required>
-        </div>
-        <br />
-        <div class='input-group gameidea-input'>
-          <label class='sr-only'>Description</label>
-          <p><span class="label label-default">Description</span></p>
-          <textarea ng-model='vm.gameidea.body' class='form-control' required></textarea>
-        </div>
-        <br />
-        <div>
-          <label class='sr-only'>Grade level</label>
-          <p><span class="label label-default">Grade level</span></p>
-          <div class='slider-div'>
-            <rzslider
-            rz-slider-model="vm.slider.gradeLevel.minValue"
-            rz-slider-high="vm.slider.gradeLevel.maxValue"
-            rz-slider-options="vm.slider.gradeLevel.options"></rzslider>
-          </div>
-          <br />
-          <label class='sr-only'>Duration in minutes</label>
-          <p><span class="label label-default">Duration in minutes</span></p>
-          <div class='slider-div'>
-            <rzslider
-            rz-slider-model="vm.slider.duration.minValue"
-            rz-slider-high="vm.slider.duration.maxValue"
-            rz-slider-options="vm.slider.duration.options"></rzslider>
-          </div>
-          <br />
-          <label class='sr-only'>Number of students in class</label>
-          <p><span class="label label-default">Number of students in class</span></p>
-          <div class='slider-div'>
-            <rzslider
-            rz-slider-model="vm.slider.studentCount.minValue"
-            rz-slider-high="vm.slider.studentCount.maxValue"
-            rz-slider-options="vm.slider.studentCount.options"></rzslider>
-          </div>
-          <br />
-        </div>
-        <div class='input-group gameidea-input'>
-          <label class='sr-only'>Materials</label>
-          <p><span class="label label-default">Materials</span></p>
-          <textarea ng-model='vm.gameidea.materials' class='form-control' required></textarea>
-        </div>
-        <br />
-        <button ng-if='vm.gameideaForm.$valid' ng-click='vm.updateGameidea()' class='btn btn-primary'>Update</button>
-      </form>
-    </div>
-  </div>
-
-  <!-- ++++++++++++++++++++++++++ ADVANCED SEARCH FORM ++++++++++++++++++++++++++ -->
-
-
 
 </div>

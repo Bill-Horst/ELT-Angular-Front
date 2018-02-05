@@ -161,14 +161,7 @@
       }
     }
 
-    function acceptNewSliderValues() {
-      vm.gameidea.mingradelevel = vm.slider.gradeLevel.minValue;
-      vm.gameidea.maxgradelevel = vm.slider.gradeLevel.maxValue;
-      vm.gameidea.minstudentcount = vm.slider.studentCount.minValue;
-      vm.gameidea.maxstudentcount = vm.slider.studentCount.maxValue;
-      vm.gameidea.mintime = vm.slider.duration.minValue;
-      vm.gameidea.maxtime = vm.slider.duration.maxValue;
-    }
+    
 
     function getColumnDefs() {
       return [
@@ -183,7 +176,7 @@
 
     function getGameideaCellTemplate(column) {
       if(column === 'title') {
-        return `<div class="ui-grid-cell-contents"><a class='gameideas-list-gameideas' ng-click="grid.appScope.vm.showGameidea(row.entity.id)">{{grid.getCellValue(row, col)}}</a></div>`;
+        return `<div class="ui-grid-cell-contents"><a class='gameideas-list-gameideas' ui-sref='gameidea({id: row.entity.id})'>{{grid.getCellValue(row, col)}}</a></div>`;
       }
     }
 

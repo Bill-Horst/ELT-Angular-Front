@@ -14,7 +14,6 @@
 
     // properties
     vm.problem = '';
-    vm.show = {};
 
     // functions
     vm.deleteProblem = deleteProblem;
@@ -33,8 +32,6 @@
     function initController() {
       Service.get('problems/'+params.id).then(function(response) {
         vm.problem = response;
-        console.log(vm.problem);
-        vm.show.showProblem = true;
       });
     }
 
