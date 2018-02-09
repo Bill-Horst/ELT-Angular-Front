@@ -7,11 +7,12 @@
   font-family: "CrayonHandRegularW00-Rg", 'Fredericka the Great', cursive;
   font-size: 1.15em;
   text-transform: uppercase;
+  color: #ffff38;
   /* background-image: linear-gradient(to bottom,var(--darkcolor) 0,var(--lightcolor) 1) !important; */
 }
 
 #navbar-bar a {
-  color: var(--lightcolor);
+  color: #ffff38;
 }
 
 .btn {

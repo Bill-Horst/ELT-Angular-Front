@@ -19,17 +19,22 @@ abbr[title]{
 }
 
 .ui-grid-contents-wrapper {
-  background-color: white;
+  /* background-color: white; */
 }
 
 .ui-grid-row:nth-child(odd) .ui-grid-cell {
-  background-color: var(--lightcolor) !important;
+  /* background-color: var(--lightcolor) !important; */
 }
 
 .ui-grid-row:nth-child(even) .ui-grid-cell {
-  background-color: var(--rows) !important;
+  /* background-color: var(--rows) !important; */
 }
 
-.ui-grid-top-panel {
-  background-image: linear-gradient(to bottom,var(--lightcolor) 0,var(--darkgrey) 100%) !important;
+.ui-grid-row .ui-grid-cell {
+  background-color: transparent !important;
+  border-bottom: 1px dotted;
+}
+
+.ui-grid-header-cell, .ui-grid-header-cell-wrapper, .ui-grid-top-panel, .ui-grid-header, .ui-grid, .ui-grid-render-container {
+  background-color: transparent !important;
 }

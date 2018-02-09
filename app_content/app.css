@@ -1,6 +1,8 @@
 /* MAIN */
 body {
-  background-color: var(--lightcolor);
+  background-color: #084425;
+  color: #ffff38;
+  font-family: "CrayonHandRegularW00-Rg", 'Fredericka the Great', cursive;
 }
 
 .main-view { /* (ui-view) */

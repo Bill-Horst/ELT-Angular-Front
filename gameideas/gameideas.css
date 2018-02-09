@@ -12,6 +12,32 @@
   font-size: 1.2em;
 }
 
+/* bootstrap game ideas */
+.game-idea-row {
+  border: 2px dotted;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  padding: 10px;
+}
+
+.title-intro-side {
+
+}
+
+.game-stats-side {
+
+}
+
+.game-title {
+  font-size: 2em;
+  padding-left: 4px;
+}
+
+.game-description {
+  padding-top: 5px;
+  text-align: justify;
+}
+
 /* game ideas form */
 .gameideas-form .input-group {
   width: 100%;
