@@ -14,10 +14,18 @@
 
 /* bootstrap game ideas */
 .game-idea-row {
-  border: 2px dotted;
-  border-radius: 5px;
+  border: 2px dashed transparent;
+  border-radius: 25%;
   margin-bottom: 5px;
-  padding: 10px;
+  padding: 30px;
+}
+
+.game-idea-row a {
+  color: inherit;
+}
+
+.game-idea-row:hover {
+  border: 2px dashed #ffff38;
 }
 
 .title-intro-side {
@@ -25,7 +33,15 @@
 }
 
 .game-stats-side {
+  letter-spacing: 3px;
+  line-height: 1.2;
+}
 
+.game-stats-side p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
 }
 
 .game-title {
@@ -35,7 +51,8 @@
 
 .game-description {
   padding-top: 5px;
-  text-align: justify;
+  letter-spacing: 3px;
+  line-height: 1.2;
 }
 
 /* game ideas form */
@@ -44,15 +61,50 @@
 }
 
 .label-default {
-  padding-bottom: 0px;
-  border-bottom-left-radius: 0;
+  font-size: 1.3em;
+  color: inherit;
+  background-color: transparent;
+}
+
+input, textarea {
+  font-size: 1.2em;
+  padding: 10px;
+  background-color: transparent;
+  border: 1px solid yellow;
 }
 
 .slider-div {
   width: 100%;
-  background-color: white;
   border-top-right-radius: .25em;
   border-bottom-right-radius: .25em;
   padding: 10px;
-  border: 1px solid lightgray;
+}
+
+span.rz-bubble.rz-model-value,
+span.rz-bubble.rz-model-high,
+span.rz-bubble.rz-limit.rz-ceil,
+span.rz-bubble.rz-limit.rz-floor {
+  color: inherit;
+}
+
+span.rz-bar.rz-selection {
+  background-color: #ffff38;
+  height: 4px;
+}
+
+.rzslider .rz-pointer {
+  top: -14px;
+  z-index: 3;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  background-color: #ffff38;
+  -webkit-border-radius: 16px;
+     -moz-border-radius: 16px;
+          border-radius: 16px;
+}
+
+.rzslider .rz-bar {
+  background: lightgrey;
+  height: 1px;
 }

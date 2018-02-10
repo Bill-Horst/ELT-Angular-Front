@@ -12,8 +12,9 @@
         <div class='loading-icon'></div>
       </div>
     </div> -->
-    <div class='container'>
+    <div class=''>
       <div class='row game-idea-row' ng-repeat='game in vm.gameideas'>
+        <a ui-sref="gameidea({id: game.id})">
 
         <div class='col-md-8'>
           <div class='title-intro-side'>
@@ -31,6 +32,7 @@
           </div>
         </div>
 
+        </a>
       </div>
     </div>
   </div>

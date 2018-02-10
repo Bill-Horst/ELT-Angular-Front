@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-  .module('elt-app', ['ui.router','ui.grid','ui.bootstrap','ui.grid.pagination','rzModule'])
+  .module('elt-app', ['ui.router', 'ui.grid', 'ui.bootstrap', 'ui.grid.pagination', 'rzModule'])
   .config(config)
   .run(run);
 
