@@ -4,7 +4,6 @@
     <h1 class='text-center'>All Games</h1>
     <div class='gameideas-nav-buttons'>
       <button class='btn btn-primary gameidea-nav-buttons' ui-sref='gameidea_form'>Add a game idea</button>
-      <button class='btn btn-primary gameidea-nav-buttons' ng-click='vm.showAdvancedSearchForm()'>Advanced search</button>
     </div>
     <!-- <div id='gameidea-grid' ui-grid='vm.gridOptions' ui-grid-pagination>
       <div class='loading' ng-if='vm.loading'>
@@ -12,14 +11,26 @@
         <div class='loading-icon'></div>
       </div>
     </div> -->
+    <label>title:</label><input ng-model='search.title'>
+    <label>description:</label><input ng-model='search.body'>
+    <label>duration:</label><input type='number' ng-model='vm.search.time'>
+    <label>grade:</label><input type='number' ng-model='vm.search.grade'>
+    <label>number of students:</label><input type='number' ng-model='vm.search.numberOfStudents'>
     <div class=''>
-      <div class='row game-idea-row' ng-repeat='game in vm.gameideas'>
+      <div class='row game-idea-row' ng-repeat='game in vm.gameideas |
+      filter:{title: search.title, body: search.body} |
+      lessThan:{maxtime: vm.search.time} |
+      lessThan:{maxgradelevel: vm.search.grade} |
+      lessThan:{maxstudentcount: vm.search.numberOfStudents} |
+      greaterThan:{mintime: vm.search.time} |
+      greaterThan:{mingradelevel: vm.search.grade} |
+      greaterThan:{minstudentcount: vm.search.numberOfStudents}'>
         <a ui-sref="gameidea({id: game.id})">
 
         <div class='col-md-8'>
           <div class='title-intro-side'>
             <p class='game-title'>{{game.title}}</p>
-            <p class='game-description'>{{game.body}}</p>
+            <p class='game-description'>{{game.body | filterHTMLTags | limitTo: 240}}{{game.body.length > 240 ? '...' : ''}}</p>
           </div>
         </div>
 

@@ -6,6 +6,9 @@
   <button class='btn btn-primary' ui-sref='gameideas'><span class='glyphicon glyphicon-arrow-left'></span> Back to all game ideas</button>
 </div>
 
+<script src="tinyMCE/js/tinymce/tinymce.min.js"></script>
+<script>tinymce.init({ selector:'textarea' });</script>
+
   <div class='form-fields'>
     <form name='vm.gameideaForm'>
       <div class='input-group gameidea-input'>
@@ -17,7 +20,7 @@
       <div class='input-group gameidea-input'>
         <label class='sr-only'>Description</label>
         <p><span class="label label-default">Description</span></p>
-        <textarea ng-model='vm.gameidea.body' required></textarea>
+        <textarea id='game-body' ng-model='vm.gameidea.body'></textarea>
       </div>
       <br />
       <div class='row'>
@@ -58,10 +61,10 @@
       <div class='input-group gameidea-input'>
         <label class='sr-only'>Materials</label>
         <p><span class="label label-default">Materials</span></p>
-        <textarea ng-model='vm.gameidea.materials' required></textarea>
+        <input ng-model='vm.gameidea.materials' required></input>
       </div>
       <br />
-      <button ng-if='vm.gameideaForm.$valid' ng-click='vm.updateGameidea()' class='btn btn-primary'>Update</button>
+      <button ng-if='vm.gameideaForm.$valid' ng-click='vm.getTinyMCEContent(); vm.updateGameidea()' class='btn btn-primary'>Update</button>
     </form>
   </div>
 </div>

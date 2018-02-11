@@ -40,10 +40,10 @@
   background-color: var(darkblue);
 } */
 
-.panel-heading {
+/* .panel-heading {
   background-image: linear-gradient(to bottom,var(--lightcolor) 0,var(--darkgrey) 100%) !important;
 }
 
 .panel-footer {
   background-image: linear-gradient(to bottom,var(--lightcolor) 0,var(--darkgrey) 100%) !important;
-}
+} */

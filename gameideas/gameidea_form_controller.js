@@ -17,6 +17,7 @@
     vm.slider = {};
 
     // functions
+    vm.getTinyMCEContent = getTinyMCEContent;
     vm.updateGameidea = updateGameidea;
 
     // initialize controller
@@ -40,6 +41,10 @@
           });
         }
       }
+    }
+
+    function getTinyMCEContent() {
+      vm.gameidea.body = (tinyMCE.get('game-body').getContent());
     }
 
     // private

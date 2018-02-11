@@ -17,6 +17,12 @@
     vm.show = {};
     vm.slider = {};
 
+    vm.search = {};
+    vm.search.time = null;
+    vm.search.grade = null;
+    vm.search.numberOfStudents = null;
+
+
     // functions
     vm.editGameidea = editGameidea;
     vm.getGameideas = getGameideas;

@@ -1,3 +1,5 @@
+
+/* GAME IDEAS INDEX */
 .gameideas-page-view {
   color: var(--darkcolor);
 }
@@ -12,12 +14,11 @@
   font-size: 1.2em;
 }
 
-/* bootstrap game ideas */
 .game-idea-row {
   border: 2px dashed transparent;
-  border-radius: 25%;
-  margin-bottom: 5px;
-  padding: 30px;
+  border-radius: 50%;
+  margin-bottom: -50px;
+  padding: 60px 60px 60px 140px;
 }
 
 .game-idea-row a {
@@ -54,8 +55,23 @@
   letter-spacing: 3px;
   line-height: 1.2;
 }
+/* END GAME IDEAS INDEX */
 
-/* game ideas form */
+
+/* SHOW SINGLE GAMEIDEA */
+.show-single-game-idea {
+  position: relative;
+}
+.game-stats-list {
+  width: 30%;
+  position: relative;
+  left: 70%;
+  background-color: red;
+}
+/* END SHOW SINGLE GAMEIDEA */
+
+
+/* GAME IDEAS FORM */
 .gameideas-form .input-group {
   width: 100%;
 }
@@ -72,6 +88,20 @@ input, textarea {
   background-color: transparent;
   border: 1px solid yellow;
 }
+
+.gameidea-input, .gameidea-input > input {
+  width: 100%;
+}
+
+/* TINYMCE adjustments */
+.gameidea-input {
+  background-color: transparent;
+}
+
+#mceu_13-body, #mceu_30 {
+  display: none;
+}
+/* END TINYMCE adjustments */
 
 .slider-div {
   width: 100%;
@@ -108,3 +138,4 @@ span.rz-bar.rz-selection {
   background: lightgrey;
   height: 1px;
 }
+/* END GAME IDEAS FORM */
