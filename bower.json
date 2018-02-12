@@ -1,0 +1,21 @@
+{
+  "name": "ELT-Angular-Front",
+  "homepage": "https://github.com/Bill-Horst/ELT-Angular-Front",
+  "authors": [
+    "Bill Horst <bill@billhorst.com>"
+  ],
+  "description": "A resource for ESL and EFL teachers",
+  "main": "index.html",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.6"
+  }
+}
