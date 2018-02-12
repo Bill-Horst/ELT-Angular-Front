@@ -3,7 +3,7 @@
   <div ng-if='vm.show.allGameideas'>
     <h1 class='text-center'>All Games</h1>
     <div class='gameideas-nav-buttons'>
-      <button class='btn btn-primary gameidea-nav-buttons' ui-sref='gameidea_form'>Add a game idea</button>
+      <button class='btn chalk-btn gameidea-nav-buttons' ui-sref='gameidea_form'>Add a game idea</button>
     </div>
     <!-- <div id='gameidea-grid' ui-grid='vm.gridOptions' ui-grid-pagination>
       <div class='loading' ng-if='vm.loading'>
@@ -40,6 +40,7 @@
             <p class='game-stat'>Grades: {{game.gradeLevelRange}}</p>
             <p class='game-stat'>Students: {{game.studentCountRange}}</p>
             <p class='game-stat'>Materials: {{game.materials}}</p>
+            <!-- <span>Tags: <span class='game-stat' ng-repeat='tag in game.tags'>{{tag.label}}{{$last ? '' : ', '}}</span></span> -->
           </div>
         </div>
 

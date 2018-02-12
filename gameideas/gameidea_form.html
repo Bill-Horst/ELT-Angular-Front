@@ -3,7 +3,7 @@
 <h1 ng-if='!vm.gameidea.id' class='text-center'>Create New Game Idea</h1>
 <h1 ng-if='vm.gameidea.id' class='text-center'>Update Game Idea</h1>
 <div class='gameidea-nav-buttons'>
-  <button class='btn btn-primary' ui-sref='gameideas'><span class='glyphicon glyphicon-arrow-left'></span> Back to all game ideas</button>
+  <button class='btn chalk-btn' ui-sref='gameideas'><span class='glyphicon glyphicon-arrow-left'></span> Back to all game ideas</button>
 </div>
 
 <script src="tinyMCE/js/tinymce/tinymce.min.js"></script>
@@ -64,7 +64,7 @@
         <input ng-model='vm.gameidea.materials' required></input>
       </div>
       <br />
-      <button ng-if='vm.gameideaForm.$valid' ng-click='vm.getTinyMCEContent(); vm.updateGameidea()' class='btn btn-primary'>Update</button>
+      <button ng-if='vm.gameideaForm.$valid' ng-click='vm.getTinyMCEContent(); vm.updateGameidea()' class='btn chalk-btn'>Update</button>
     </form>
   </div>
 </div>

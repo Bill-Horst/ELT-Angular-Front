@@ -1,20 +1,20 @@
 <!-- <h1 class='text-center'>Selected Game Idea</h1> -->
 <div class='show-single-game-idea'>
-  <button class='btn btn-primary gameidea-nav-buttons' ui-sref='gameideas'><span class='glyphicon glyphicon-arrow-left'></span> Back to all game ideas</button>
-  <h1 class='text-center'>{{vm.gameidea.title}}</h1>
+  <button class='btn chalk-btn gameidea-nav-buttons' ui-sref='gameideas'><span class='glyphicon glyphicon-arrow-left'></span> Back to all game ideas</button>
+  <h1 class='text-center single-game-title'>{{vm.gameidea.title}}</h1>
   <div class='game-stats-list'>
     <ul>
-      <li>Best for {{vm.gameidea.minstudentcount}} to {{vm.gameidea.maxstudentcount}} students</li>
-      <li>Can last between {{vm.gameidea.mintime}} and {{vm.gameidea.maxtime}} minutes</li>
-      <li>Best for grade level(s) {{vm.gameidea.mingradelevel}} - {{vm.gameidea.maxgradelevel}}</li>
-      <li>You'll need: {{vm.gameidea.materials}}</li>
+      <li>-Best for {{vm.gameidea.minstudentcount}} to {{vm.gameidea.maxstudentcount}} students</li>
+      <li>-Can last between {{vm.gameidea.mintime}} and {{vm.gameidea.maxtime}} minutes</li>
+      <li>-Best for grade level(s) {{vm.gameidea.mingradelevel}} - {{vm.gameidea.maxgradelevel}}</li>
+      <li>-You'll need: {{vm.gameidea.materials}}</li>
     </ul>
   </div>
   <div class='game-body'>
-    <p ng-bind-html='vm.safeGameIdeaBody'>{{vm.gameidea.body}}</p>
+    <div ng-bind-html='vm.safeGameIdeaBody' class='game-body-description'>{{vm.gameidea.body}}</div>
   </div>
   <div>
-    <button class='btn btn-primary' ui-sref='gameidea_form({id: vm.gameidea.id})'>edit</button>
-    <button class='btn btn-danger' ng-click='vm.deleteGameidea(vm.gameidea)'>delete</button>
+    <button class='btn chalk-btn' ui-sref='gameidea_form({id: vm.gameidea.id})'>edit</button>
+    <button class='btn eraser-btn' ng-click='vm.deleteGameidea(vm.gameidea)'>delete</button>
   </div>
 </div>
