@@ -12,8 +12,6 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angularjs-slider/6.4.3/rzslider.css" />
 
-
-
   <!-- pieces css -->
   <link href='app_content/reset.css' rel='stylesheet' />
   <link href='app_content/setup.css' rel='stylesheet' />
@@ -24,54 +22,22 @@
   <link href='app_content/app.css' rel='stylesheet' />
   <!-- individual modules css -->
   <link href='problems/problems.css' rel='stylesheet' />
+  <link href='gameideas/gameideas.css' rel='stylesheet' />
 </head>
 
 <body ng-app='elt-app'>
 
-  <nav class="navbar navbar-default navbar-fixed-top">
-    <div id='navbar-bar' class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <!-- <a ng-class='{active: activeTab === "home"}' class='navbar-brand' ui-sref='home'>Home</a> -->
-      </div>
+  <!-- NAVIGATION, ROUTER, FOOTER -->
 
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li ng-class="{active: activeTab === 'home'}"><a ui-sref='home'>Home</a></li>
-          <!-- <li ng-class="{active: activeTab === 'problems'}"><a ui-sref='problems'>Build Problems</a></li> -->
-          <!-- <li ng-class="{active: activeTab === 'gameideas'}"><a ui-sref='gameideas'>Game Ideas</a></li> -->
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li ng-class="{active: activeTab === 'resources'}"><a ui-sref='resources'>Teaching Resources</a></li>
-          <li ng-class="{active: activeTab === 'gameideas'}"><a ui-sref='gameideas'>Game Ideas</a></li>
-          <li ng-class="{active: activeTab === 'blog'}"><a ui-sref='blog'>Blog</a></li>
-          <button type="button" class="btn btn-default navbar-btn">Sign in</button>
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-  </nav>
+  <navigation></navigation>
+
   <div class='main-view'>
     <main ui-view></main>
   </div>
-  <footer class="footer">
-    <div class='card-holder'>
-      <div class='card'>
-        <p id='copyright-message'>&copy; 2018 Bill Horst, ALT App</p>
-        <p id='card-info'>Info</p>
-        <p id='card-info'>Info</p>
-        <p id='card-info'>Info</p>
-      </div>
-    </div>
-    <div id='silver-tray'>
 
-    </div>
-  </footer>
+  <bottom-footer></bottom-footer>
+
+  <!-- END NAVIGATION, ROUTER, FOOTER -->
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
@@ -90,9 +56,9 @@
   <script src='app_content/scripts.js'></script>
   <script src='app_filters/filters.js'></script>
 
-  <!-- services -->
   <script src='./config.js'></script>
   <script src='app_services/service.js'></script>
+  <script src='app_directives/main_page.js'></script>
 
   <!-- controllers -->
   <script src='home/home_controller.js'></script>
@@ -108,7 +74,6 @@
   <script src='resources/resources_controller.js'></script>
 
   <script src='blog/blog_controller.js'></script>
-  <link href='gameideas/gameideas.css' rel='stylesheet' />
 
 </body>
 </html>
