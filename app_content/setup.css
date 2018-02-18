@@ -41,13 +41,17 @@ body {
   perspective: 500px;
   position: absolute;
   bottom: 0;
-  left: 30px;
+  right: 30px;
 }
 .card {
   background-image: url('../index_card.jpg');
   width: 200px;
   height: 100px;
   transform: rotate3d(1,0,0,15deg);
+}
+
+.card-info {
+  margin-left: 5px;
 }
 
 #copyright-message {

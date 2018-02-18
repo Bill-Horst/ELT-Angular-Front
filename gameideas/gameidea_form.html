@@ -13,16 +13,16 @@
     <form name='vm.gameideaForm'>
       <div class='input-group gameidea-input'>
         <label class='sr-only'>Title</label>
-        <p><span class="label label-default">Title</span></p>
+        <p><span class="label label-default">Title (required)</span></p>
         <input type='text' ng-model='vm.gameidea.title' required>
       </div>
-      <br />
+
       <div class='input-group gameidea-input'>
         <label class='sr-only'>Description</label>
-        <p><span class="label label-default">Description</span></p>
+        <p><span class="label label-default">Description (required)</span></p>
         <textarea id='game-body' ng-model='vm.gameidea.body'></textarea>
       </div>
-      <br />
+      
       <div class='row'>
         <div class='col-md-4'>
           <label class='sr-only'>Grade level</label>
@@ -60,7 +60,7 @@
       </div>
       <div class='input-group gameidea-input'>
         <label class='sr-only'>Materials</label>
-        <p><span class="label label-default">Materials</span></p>
+        <p><span class="label label-default">Materials (required)</span></p>
         <input ng-model='vm.gameidea.materials' required></input>
       </div>
       <br />

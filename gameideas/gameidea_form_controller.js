@@ -86,7 +86,7 @@
         };
       } else if (slider === 'studentCount') {
         return {
-          minValue: vm.gameidea.minstudentcount ? vm.gameidea.minstudentcount : 2,
+          minValue: vm.gameidea.minstudentcount ? vm.gameidea.minstudentcount : 1,
           maxValue: vm.gameidea.maxstudentcount ? vm.gameidea.maxstudentcount : 40,
           options: {
             floor: 1,

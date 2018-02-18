@@ -3,16 +3,17 @@
 }
 
 .navbar-default, .navbar, #navbar-bar {
-  background-color: #26532b;
-  font-family: "CrayonHandRegularW00-Rg", 'Fredericka the Great', cursive;
+  background-color: #caceca;
+  /* font-family: "CrayonHandRegularW00-Rg", 'Fredericka the Great', cursive; */
+  font-family: fantasy;
   font-size: 1.15em;
   text-transform: uppercase;
-  color: #ffff38;
+  color: #030;
   /* background-image: linear-gradient(to bottom,var(--darkcolor) 0,var(--lightcolor) 1) !important; */
 }
 
 #navbar-bar a {
-  color: #ffff38;
+  color: #030;
 }
 
 .btn {

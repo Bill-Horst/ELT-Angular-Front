@@ -15,12 +15,14 @@
     vm.gameideas = [];
     vm.loading = false;
     vm.show = {};
+    vm.showSearchFields = false;
     vm.slider = {};
 
     vm.search = {};
     vm.search.time = null;
     vm.search.grade = null;
     vm.search.numberOfStudents = null;
+    vm.search.materials;
 
 
     // functions
@@ -61,6 +63,7 @@
     function getGameideas() {
       Service.get('gameideas').then(function(response) {
         vm.gameideas = response;
+          console.log(vm.gameideas);
         // combine columns to display min/max in single column
         vm.gameideas = combineColumns(vm.gameideas, 'mingradelevel', 'maxgradelevel', 'gradeLevelRange');
         vm.gameideas = combineColumns(vm.gameideas, 'mintime', 'maxtime', 'timeRange');

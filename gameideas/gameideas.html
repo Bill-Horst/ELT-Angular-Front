@@ -3,50 +3,46 @@
   <div ng-if='vm.show.allGameideas'>
     <h1 class='text-center'>All Games</h1>
     <div class='gameideas-nav-buttons'>
-      <button class='btn chalk-btn gameidea-nav-buttons' ui-sref='gameidea_form'>Add a game idea</button>
+      <button class='btn chalk-btn gameidea-nav-buttons create-gameidea-button' ui-sref='gameidea_form'>Add your own game</button> <br />
+      <button class='chalk-btn gameidea-nav-buttons' ng-click='vm.showSearchFields = !vm.showSearchFields' ng-if='!vm.showSearchFields'>Search for a game</button>
+      <button class='chalk-btn gameidea-nav-buttons' ng-click='vm.showSearchFields = !vm.showSearchFields' ng-if='vm.showSearchFields'>Hide advanced search</button>
     </div>
-    <!-- <div id='gameidea-grid' ui-grid='vm.gridOptions' ui-grid-pagination>
-      <div class='loading' ng-if='vm.loading'>
-        <p>Loading... Please wait.</p>
-        <div class='loading-icon'></div>
-      </div>
-    </div> -->
-    <label>title:</label><input ng-model='search.title'>
-    <label>description:</label><input ng-model='search.body'>
-    <label>duration:</label><input type='number' ng-model='vm.search.time'>
-    <label>grade:</label><input type='number' ng-model='vm.search.grade'>
-    <label>number of students:</label><input type='number' ng-model='vm.search.numberOfStudents'>
-    <div class=''>
-      <div class='row game-idea-row' ng-repeat='game in vm.gameideas |
-      filter:{title: search.title, body: search.body} |
-      lessThan:{maxtime: vm.search.time} |
-      lessThan:{maxgradelevel: vm.search.grade} |
-      lessThan:{maxstudentcount: vm.search.numberOfStudents} |
-      greaterThan:{mintime: vm.search.time} |
-      greaterThan:{mingradelevel: vm.search.grade} |
-      greaterThan:{minstudentcount: vm.search.numberOfStudents}'>
-        <a ui-sref="gameidea({id: game.id})">
-
-        <div class='col-md-8'>
-          <div class='title-intro-side'>
-            <p class='game-title'>{{game.title}}</p>
-            <p class='game-description'>{{game.body | filterHTMLTags | limitTo: 240}}{{game.body.length > 240 ? '...' : ''}}</p>
-          </div>
-        </div>
-
-        <div class='col-md-4'>
-          <div class='game-stats-side'>
-            <p class='game-stat'>Duration: {{game.timeRange}}</p>
-            <p class='game-stat'>Grades: {{game.gradeLevelRange}}</p>
-            <p class='game-stat'>Students: {{game.studentCountRange}}</p>
-            <p class='game-stat'>Materials: {{game.materials}}</p>
-            <!-- <span>Tags: <span class='game-stat' ng-repeat='tag in game.tags'>{{tag.label}}{{$last ? '' : ', '}}</span></span> -->
-          </div>
-        </div>
-
-        </a>
-      </div>
+    <div class='advanced-search-inputs' ng-if='vm.showSearchFields'>
+      <div><label>title:</label><br /><input align="right" ng-model='search.title' placeholder='Fruit Basket'></div>
+      <div><label>duration in minutes:</label><br /><input type='number' ng-model='vm.search.time' placeholder='20'></div>
+      <div><label>grade:</label><br /><input type='number' ng-model='vm.search.grade' placeholder='5'></div>
+      <div><label>number of students:</label><br /><input type='number' ng-model='vm.search.numberOfStudents' placeholder='33'></div>
+      <div><label>material (one):</label><br /><input type='text' ng-model='vm.search.materials' placeholder='flashcards'></div>
     </div>
+    <div class='row game-idea-row' ng-repeat='game in vm.gameideas |
+    filter:{title: search.title, materials: vm.search.materials} |
+    lessThan:{maxtime: vm.search.time} |
+    lessThan:{maxgradelevel: vm.search.grade} |
+    lessThan:{maxstudentcount: vm.search.numberOfStudents} |
+    greaterThan:{mintime: vm.search.time} |
+    greaterThan:{mingradelevel: vm.search.grade} |
+    greaterThan:{minstudentcount: vm.search.numberOfStudents}'>
+    <a ui-sref="gameidea({id: game.id})">
+
+      <div class='col-md-8'>
+        <div class='title-intro-side'>
+          <p class='game-title'>{{game.title}}</p>
+          <p class='game-description'>{{game.body | filterHTMLTags | limitTo: 240}}{{game.body.length > 240 ? '...' : ''}}</p>
+        </div>
+      </div>
+
+      <div class='col-md-4'>
+        <div class='game-stats-side'>
+          <p class='game-stat'>Duration: {{game.timeRange}}</p>
+          <p class='game-stat'>Grades: {{game.gradeLevelRange}}</p>
+          <p class='game-stat'>Students: {{game.studentCountRange}}</p>
+          <p class='game-stat'>Materials: {{game.materials}}</p>
+          <!-- <span>Tags: <span class='game-stat' ng-repeat='tag in game.tags'>{{tag.label}}{{$last ? '' : ', '}}</span></span> -->
+        </div>
+      </div>
+
+    </a>
   </div>
+</div>
 
 </div>
