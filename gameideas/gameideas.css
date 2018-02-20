@@ -38,10 +38,12 @@
 }
 
 .game-idea-row {
-  border: 2px dashed transparent;
-  border-radius: 50%;
-  margin-bottom: -50px;
-  padding: 60px 60px 60px 140px;
+  /* border: 2px dashed transparent; */
+  /* border-radius: 50%; */
+  /* margin-bottom: -50px; */
+  /* padding: 60px 60px 60px 140px; */
+  /* background-color: red; */
+  background-image: url('../index_card.jpg');
 }
 
 .game-idea-row a {
@@ -49,7 +51,7 @@
 }
 
 .game-idea-row:hover {
-  border: 2px dashed #ffff38;
+  /* border: 2px dashed #ffff38; */
 }
 
 .title-intro-side {
@@ -59,6 +61,7 @@
 .game-stats-side {
   letter-spacing: 3px;
   line-height: 1.2;
+  padding-top: 2em;
 }
 
 .game-stats-side p {
@@ -70,7 +73,7 @@
 
 .game-title {
   font-size: 2em;
-  padding-left: 4px;
+  padding-left: 25px;
 }
 
 .game-description {
@@ -230,4 +233,8 @@ span.rz-bar.rz-selection {
   0% {left: 0px;}
   50% {left: 10px;}
   100% {left: 0px;}
+}
+
+.disabled-button {
+  cursor: not-allowed;
 }

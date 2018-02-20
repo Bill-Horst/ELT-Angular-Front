@@ -44,6 +44,8 @@ body {
   right: 30px;
 }
 .card {
+  font-family: "CrayonHandRegularW00-Rg", cursive;
+  font-size: 1em;
   background-image: url('../index_card.jpg');
   width: 200px;
   height: 100px;

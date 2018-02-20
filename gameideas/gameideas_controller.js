@@ -14,18 +14,13 @@
     vm.gameidea = {};
     vm.gameideas = [];
     vm.loading = false;
+    vm.search = {};
     vm.show = {};
     vm.showSearchFields = false;
     vm.slider = {};
 
-    vm.search = {};
-    vm.search.time = null;
-    vm.search.grade = null;
-    vm.search.numberOfStudents = null;
-    vm.search.materials;
-
-
     // functions
+    vm.clearSearchInput = clearSearchInput;
     vm.editGameidea = editGameidea;
     vm.getGameideas = getGameideas;
     vm.showAllGameideas = showAllGameideas;
@@ -58,6 +53,15 @@
     function initController() {
       vm.loading = true;
       vm.getGameideas();
+      clearSearchInput();
+    }
+
+    function clearSearchInput() {
+      vm.search.title = undefined;
+      vm.search.time = null;
+      vm.search.grade = null;
+      vm.search.numberOfStudents = null;
+      vm.search.materials = undefined;
     }
 
     function getGameideas() {
