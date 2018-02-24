@@ -14,7 +14,7 @@
       <div><label>number of students:</label><br /><input type='number' ng-model='vm.search.numberOfStudents' placeholder='33'></div>
       <div><label>material (one):</label><br /><input type='text' ng-model='vm.search.materials' placeholder='flashcards'></div>
     </div>
-    <div class='row game-idea-row' ng-repeat='game in vm.gameideas |
+    <div class='row game-idea-row green-paper' ng-repeat='game in vm.gameideas |
     filter:{title: vm.search.title, materials: vm.search.materials} |
     lessThan:{maxtime: vm.search.time} |
     lessThan:{maxgradelevel: vm.search.grade} |
@@ -22,7 +22,9 @@
     greaterThan:{mintime: vm.search.time} |
     greaterThan:{mingradelevel: vm.search.grade} |
     greaterThan:{minstudentcount: vm.search.numberOfStudents}'>
+
     <a ui-sref="gameidea({id: game.id})">
+      <div class='tape-picture'></div>
 
       <div class='col-md-8'>
         <div class='title-intro-side'>
@@ -40,8 +42,8 @@
           <!-- <span>Tags: <span class='game-stat' ng-repeat='tag in game.tags'>{{tag.label}}{{$last ? '' : ', '}}</span></span> -->
         </div>
       </div>
-
     </a>
+
   </div>
 </div>
 
