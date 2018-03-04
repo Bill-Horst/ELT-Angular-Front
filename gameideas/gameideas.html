@@ -3,9 +3,9 @@
   <div ng-if='vm.show.allGameideas'>
     <h1 class='text-center'>All Games</h1>
     <div class='gameideas-nav-buttons'>
-      <button class='btn chalk-btn gameidea-nav-buttons create-gameidea-button' ui-sref='gameidea_form'>Add your own game</button> <br />
-      <button class='chalk-btn gameidea-nav-buttons' ng-click='vm.showSearchFields = !vm.showSearchFields' ng-if='!vm.showSearchFields'>Search for a game</button>
-      <button class='chalk-btn gameidea-nav-buttons' ng-click='vm.showSearchFields = !vm.showSearchFields; vm.clearSearchInput()' ng-if='vm.showSearchFields'>Hide advanced search</button>
+      <button class='btn chalk-btn gameidea-nav-buttons' ui-sref='gameidea_form'>Add your own game</button> <br />
+      <button class='btn chalk-btn gameidea-nav-buttons' ng-click='vm.showSearchFields = !vm.showSearchFields' ng-if='!vm.showSearchFields'>Search for a game</button>
+      <button class='btn chalk-btn gameidea-nav-buttons' ng-click='vm.showSearchFields = !vm.showSearchFields; vm.clearSearchInput()' ng-if='vm.showSearchFields'>Hide advanced search</button>
     </div>
     <div class='advanced-search-inputs' ng-if='vm.showSearchFields'>
       <div><label>title:</label><br /><input align="right" ng-model='vm.search.title' placeholder='Fruit Basket'></div>
@@ -14,7 +14,7 @@
       <div><label>number of students:</label><br /><input type='number' ng-model='vm.search.numberOfStudents' placeholder='33'></div>
       <div><label>material (one):</label><br /><input type='text' ng-model='vm.search.materials' placeholder='flashcards'></div>
     </div>
-    <div class='row game-idea-row green-paper' ng-repeat='game in vm.gameideas |
+    <div class='row game-idea-row paper' ng-repeat='game in vm.gameideas |
     filter:{title: vm.search.title, materials: vm.search.materials} |
     lessThan:{maxtime: vm.search.time} |
     lessThan:{maxgradelevel: vm.search.grade} |
@@ -45,6 +45,4 @@
     </a>
 
   </div>
-</div>
-
 </div>

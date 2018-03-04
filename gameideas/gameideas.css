@@ -9,10 +9,6 @@
   margin-bottom: 5px;
 }
 
-.create-gameidea-button {
-  /* float: right; */
-}
-
 .advanced-search-inputs {
   background-color: blue;
   position: -webkit-sticky;
@@ -40,15 +36,23 @@
 .game-idea-row {
   margin-top: 30px;
   color: black;
-  /* background-color: grey; */
   padding: 30px;
 }
 
-.green-paper {background-color: green}
-.blue-paper {background-color: blue}
-.yellow-paper {background-color: yellow}
-.red-paper {background-color: red}
-.orange-paper {background-color: orange}
+.paper {
+  background-image: url('https://image.freepik.com/free-photo/white-crumpled-paper-texture-for-background_1373-159.jpg');
+  background-size: cover;
+  transition: 200ms ease-in-out;
+}
+
+.paper:nth-child(odd) {
+  background-image: url('http://www.publicdomainpictures.net/pictures/240000/velka/paper-texture-1510600415LYD.jpg');
+  background-size: cover;
+}
+
+.paper:hover {
+  transform: scale(1.01);
+}
 
 .tape-picture {
   background-image: url('../tape.png');
