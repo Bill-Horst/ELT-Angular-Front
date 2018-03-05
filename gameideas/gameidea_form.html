@@ -1,13 +1,12 @@
+<div>
+  <h1 ng-if='!vm.gameidea.id' class='text-center'>Create New Game</h1>
+  <h1 ng-if='vm.gameidea.id' class='text-center'>Update Game</h1>
+  <div class='gameidea-nav-buttons'>
+    <button class='btn chalk-btn' ui-sref='gameideas'><span class='glyphicon glyphicon-arrow-left'></span> Back to all games</button>
+  </div>
 
-<div class=''>
-<h1 ng-if='!vm.gameidea.id' class='text-center'>Create New Game</h1>
-<h1 ng-if='vm.gameidea.id' class='text-center'>Update Game</h1>
-<div class='gameidea-nav-buttons'>
-  <button class='btn chalk-btn' ui-sref='gameideas'><span class='glyphicon glyphicon-arrow-left'></span> Back to all games</button>
-</div>
-
-<script src="tinyMCE/js/tinymce/tinymce.min.js"></script>
-<script>tinymce.init({ selector:'textarea' });</script>
+  <script src="tinyMCE/js/tinymce/tinymce.min.js"></script>
+  <script>tinymce.init({ selector:'textarea' });</script>
 
   <div class='form-fields'>
     <form name='vm.gameideaForm'>
@@ -64,7 +63,7 @@
         <input ng-model='vm.gameidea.materials' required></input>
       </div>
       <br />
-      <button ng-class='!vm.gameideaForm.$valid ? "disabled-button" : ""' ng-disabled='!vm.gameideaForm.$valid' ng-click='vm.getTinyMCEContent(); vm.updateGameidea()' class='btn chalk-btn'>Submit game</button>
+      <button ng-class='!vm.gameideaForm.$valid ? "disabled-button" : ""' ng-click='vm.updateGameidea()' class='btn chalk-btn'>Submit game</button>
     </form>
   </div>
 </div>

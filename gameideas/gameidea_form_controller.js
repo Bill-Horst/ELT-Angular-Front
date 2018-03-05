@@ -17,7 +17,6 @@
     vm.slider = {};
 
     // functions
-    vm.getTinyMCEContent = getTinyMCEContent;
     vm.updateGameidea = updateGameidea;
 
     // initialize controller
@@ -28,6 +27,7 @@
     // define functions
     function updateGameidea() {
       acceptNewSliderValues();
+      vm.gameidea.body = (tinyMCE.get('game-body').getContent());
       if(vm.gameideaForm.$valid) {
         if(vm.gameidea.id) {
           Service.update('gameideas/'+vm.gameidea.id,vm.gameidea).then(function(response) {
@@ -41,10 +41,6 @@
           });
         }
       }
-    }
-
-    function getTinyMCEContent() {
-      vm.gameidea.body = (tinyMCE.get('game-body').getContent());
     }
 
     // private
