@@ -1,3 +1,4 @@
+/* PROBLEMS INDEX */
 .problem-page-view {
   color: var(--darkcolor);
 }
@@ -11,8 +12,10 @@
   color: inherit;
   font-size: 1.2em;
 }
+/* END PROBLEMS INDEX */
 
-/* problem form */
+
+/* PROBLEMS FORM */
 .problem-form .input-group {
   width: 90%;
 }
@@ -30,9 +33,10 @@
   width: 100%;
   margin: auto;
 }
+/* END PROBLEMS FORM */
 
-/* view problem */
 
+/* VIEW PROBLEM */
 .glyphicon-ok-circle {
   color: green;
 }
@@ -40,3 +44,4 @@
 .glyphicon-remove-circle {
   color: red;
 }
+/* END VIEW PROBLEM */

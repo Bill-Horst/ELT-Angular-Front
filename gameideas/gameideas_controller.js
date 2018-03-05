@@ -51,7 +51,6 @@
 
     // define functions
     function initController() {
-      vm.loading = true;
       vm.getGameideas();
       clearSearchInput();
     }
@@ -65,15 +64,16 @@
     }
 
     function getGameideas() {
+      vm.loading = true;
       Service.get('gameideas').then(function(response) {
         vm.gameideas = response;
-          console.log(vm.gameideas);
+        console.log(vm.gameideas);
         // combine columns to display min/max in single column
         vm.gameideas = combineColumns(vm.gameideas, 'mingradelevel', 'maxgradelevel', 'gradeLevelRange');
         vm.gameideas = combineColumns(vm.gameideas, 'mintime', 'maxtime', 'timeRange');
         vm.gameideas = combineColumns(vm.gameideas, 'minstudentcount', 'maxstudentcount', 'studentCountRange');
 
-        vm.gridOptions.data = vm.gameideas;
+        // vm.gridOptions.data = vm.gameideas;
         vm.loading = false;
       });
     }

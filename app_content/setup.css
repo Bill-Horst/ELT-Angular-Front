@@ -1,15 +1,7 @@
 html {
-
-  /* --darkblue:     #0c2cff; /* bootstrap button */ */
-  /* --darkerblue:   #3950df; /* bootstrap button */ */
-  /* --darkcolor:    #1f5701; /* darkest color for navbar */ */
-  /* --mediumcolor:  #aaed97; /* medium color for navbar words */ */
-  /* --lightcolor:   #f6fff9; /* lightest color for background */ */
-
   --darkcolor:    #26532b;
   --mediumcolor:  #399e5a;
   --lightcolor:   #e8fffe; /* background, row highlights */
-
   --darkgrey: #63e2c6; /* darker grey */
   --rows: #f4fcfc; /* very light for rows */
 }
@@ -30,7 +22,7 @@ body {
   width: 100%;
   height: 60px; /* *!*!keep same as margin-bottom of body*!*! */
   background-color: #33231c;
-  background-image: url('../bottom_wood.jpg');
+  background-image: url('../app_images/bottom_wood.jpg');
   background-size: cover;
   color: black !important;
 }
@@ -46,7 +38,7 @@ body {
 .card {
   font-family: "CrayonHandRegularW00-Rg", cursive;
   font-size: 1em;
-  background-image: url('../index_card.jpg');
+  background-image: url('../app_images/index_card.jpg');
   width: 200px;
   height: 100px;
   transform: rotate3d(1,0,0,15deg);

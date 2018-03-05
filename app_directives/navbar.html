@@ -13,9 +13,8 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li ng-class="{active: activeTab === 'home'}"><a ui-sref='home'>Home</a></li>
+        <li ng-class="{active: activeTab === 'home'}"><a ui-sref='home'>Hello Sensei</a></li>
         <!-- <li ng-class="{active: activeTab === 'problems'}"><a ui-sref='problems'>Build Problems</a></li> -->
-        <!-- <li ng-class="{active: activeTab === 'gameideas'}"><a ui-sref='gameideas'>Game Ideas</a></li> -->
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li ng-class="{active: activeTab === 'gameideas'}"><a ui-sref='gameideas'>Game Ideas</a></li>
@@ -26,3 +25,9 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
+<script> // MAKE HAMBURGER ICON MENU DISAPPEAR UPON CLICKING AN ITEM
+$('.navbar-collapse ul li a').click(function(){
+  $('.navbar-toggle:visible').click();
+});
+</script> <!-- END MAKE HAMBURGER ICON MENU DISAPPEAR UPON CLICKING AN ITEM -->

@@ -1,15 +1,14 @@
+/* OVERRIDING BOOTSTRAP CLASSES */
 .navbar-btn {
   margin-right: 20px;
 }
 
 .navbar-default, .navbar, #navbar-bar {
   background-color: #caceca;
-  /* font-family: "CrayonHandRegularW00-Rg", 'Fredericka the Great', cursive; */
   font-family: fantasy;
   font-size: 1.15em;
   text-transform: uppercase;
   color: #030;
-  /* background-image: linear-gradient(to bottom,var(--darkcolor) 0,var(--lightcolor) 1) !important; */
 }
 
 #navbar-bar a {
@@ -20,31 +19,4 @@
   border-radius: 0;
   border: none;
 }
-
-/* .btn-primary {
-  background-image: linear-gradient(to bottom,var(darkblue) 0,var(darkerblue) 100%);
-  color: var(--darkcolor);
-}
-
-.btn-primary:hover {
-  background-image: linear-gradient(to bottom,var(darkerblue) 0,var(darkblue) 100%);
-  background-color: var(darkblue);
-}
-
-.btn-primary:focus {
-  background-image: linear-gradient(to bottom,var(darkblue) 0,var(darkerblue) 100%);
-  background-color: var(darkblue);
-}
-
-.btn-primary:active:hover {
-  background-image: linear-gradient(to bottom,var(darkblue) 0,var(darkerblue) 100%);
-  background-color: var(darkblue);
-} */
-
-/* .panel-heading {
-  background-image: linear-gradient(to bottom,var(--lightcolor) 0,var(--darkgrey) 100%) !important;
-}
-
-.panel-footer {
-  background-image: linear-gradient(to bottom,var(--lightcolor) 0,var(--darkgrey) 100%) !important;
-} */
+/* END OVERRIDING BOOTSTRAP CLASSES */

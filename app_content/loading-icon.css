@@ -1,3 +1,4 @@
+/* LOADING ICON COMPONENT */
 .loading {
   position: absolute;
   bottom: 50px;
@@ -26,7 +27,8 @@
 @keyframes rotate {
   from {transform: rotate(0deg);}
   to {transform: rotate(360deg);}
-  0% {border-top-color: black; border-bottom-color: var(darkblue);}
-  50% {border-top-color: var(--darkgrey); border-bottom-color: black;}
-  100% {border-top-color: black; border-bottom-color: var(darkblue);}
+  0% {border-top-color: #6bff89; border-bottom-color: #fff86b;}
+  50% {border-top-color: #fff56b; border-bottom-color: #6bff89;}
+  100% {border-top-color: #6bff89; border-bottom-color: #6bff9a;}
 }
+/* END LOADING ICON COMPONENT */
