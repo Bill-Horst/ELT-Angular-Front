@@ -15,6 +15,7 @@
       baseUrl = 'https://frozen-sierra-32417.herokuapp.com/';
     } else {
       baseUrl = 'http://localhost:3000/';
+        // baseUrl = 'https://frozen-sierra-32417.herokuapp.com/';
     }
 
     service.get = get;

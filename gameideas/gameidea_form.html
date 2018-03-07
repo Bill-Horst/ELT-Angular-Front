@@ -63,7 +63,7 @@
         <input ng-model='vm.gameidea.materials' required></input>
       </div>
       <br />
-      <button ng-class='!vm.gameideaForm.$valid ? "disabled-button" : ""' ng-click='vm.updateGameidea()' class='btn chalk-btn'>Submit game</button>
+      <button ng-class='!vm.gameideaForm.$valid ? "disabled-button" : ""' ng-disabled='!vm.gameideaForm.$valid' ng-click='vm.getTinyMCEContent(); vm.updateGameidea()' class='btn chalk-btn'>Submit game</button>
     </form>
   </div>
 </div>

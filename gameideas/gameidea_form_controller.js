@@ -31,12 +31,10 @@
       if(vm.gameideaForm.$valid) {
         if(vm.gameidea.id) {
           Service.update('gameideas/'+vm.gameidea.id,vm.gameidea).then(function(response) {
-            console.log(response);
             $state.go('gameideas');
           });
         } else {
           Service.post('gameideas/',vm.gameidea).then(function(response) {
-            console.log(response);
             $state.go('gameideas');
           });
         }
@@ -51,6 +49,7 @@
           vm.slider.gradeLevel = getSliderValues('gradeLevel');
           vm.slider.duration = getSliderValues('duration');
           vm.slider.studentCount = getSliderValues('studentCount');
+          tinymce.get('game-body').setContent(vm.gameidea.body);
         });
       } else {
         vm.gameidea = {};
@@ -62,7 +61,6 @@
 
     function getSliderValues(slider) {
       if(slider === 'gradeLevel') {
-        console.log(vm.gameidea);
         return {
           minValue: vm.gameidea.mingradelevel ? vm.gameidea.mingradelevel : 3,
           maxValue: vm.gameidea.mingradelevel ? vm.gameidea.maxgradelevel : 7,

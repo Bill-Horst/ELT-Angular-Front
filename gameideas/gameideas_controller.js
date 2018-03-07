@@ -67,7 +67,6 @@
       vm.loading = true;
       Service.get('gameideas').then(function(response) {
         vm.gameideas = response;
-        console.log(vm.gameideas);
         // combine columns to display min/max in single column
         vm.gameideas = combineColumns(vm.gameideas, 'mingradelevel', 'maxgradelevel', 'gradeLevelRange');
         vm.gameideas = combineColumns(vm.gameideas, 'mintime', 'maxtime', 'timeRange');
@@ -89,7 +88,6 @@
       if(id) {
         Service.get('gameideas/'+id).then(function(response) {
           vm.gameidea = response;
-          console.log(vm.gameidea);
         });
       }
     }
@@ -108,15 +106,12 @@
         if(vm.gameidea.id) { // if edit (vm.gameidea already existed)
           Service.update('gameideas/'+vm.gameidea.id,vm.gameidea).then(function(response) {
             // in future, update tags here
-            console.log('update to: ');
-            console.log(response);
             // vm.gameideas.push(response);
             // TODO: map the vm.gameideas array and replace old
             // TODO: gameidea with response by id
           });
         } else {
           Service.post('gameideas/'+vm.gameidea).then(function(response) {
-            console.log('created new game: '+response)
           });
         }
       }
@@ -173,8 +168,6 @@
         };
       }
     }
-
-
 
     function getColumnDefs() {
       return [
