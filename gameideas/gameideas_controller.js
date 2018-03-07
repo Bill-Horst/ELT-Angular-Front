@@ -5,9 +5,9 @@
   .module('elt-app')
   .controller('gameideasController', Controller);
 
-  Controller.$inject = ['Service'];
+  Controller.$inject = ['Service', '$state'];
 
-  function Controller(Service) {
+  function Controller(Service, $state) {
     let vm = this;
 
     // properties
@@ -21,27 +21,12 @@
 
     // functions
     vm.clearSearchInput = clearSearchInput;
-    vm.editGameidea = editGameidea;
     vm.getGameideas = getGameideas;
-    vm.showAllGameideas = showAllGameideas;
-    vm.showGameidea = showGameidea;
-    vm.updateGameidea = updateGameidea;
 
     // initialize controller
     initController();
 
     // initialize properties
-    vm.gridOptions = {
-      paginationPageSizes: false,
-      paginationPageSize: 10,
-      enableFiltering: true,
-      enableColumnMenus: false,
-      columnDefs: getColumnDefs(),
-      onRegisterApi: function (gridApi) {
-        this.gridApi = gridApi;
-      }
-    }
-
     vm.show = {
       allGameideas: true,
       gameideasForm: false,
@@ -71,50 +56,12 @@
         vm.gameideas = combineColumns(vm.gameideas, 'mingradelevel', 'maxgradelevel', 'gradeLevelRange');
         vm.gameideas = combineColumns(vm.gameideas, 'mintime', 'maxtime', 'timeRange');
         vm.gameideas = combineColumns(vm.gameideas, 'minstudentcount', 'maxstudentcount', 'studentCountRange');
-
         // vm.gridOptions.data = vm.gameideas;
         vm.loading = false;
+      }, function() {
+        alert('Attempt failed');
+        $state.go('home');
       });
-    }
-
-    function showAllGameideas() {
-      vm.show = {};
-      vm.show.allGameideas = true;
-    }
-
-    function showGameidea(id) {
-      vm.show = {};
-      vm.show.singleGameidea = true;
-      if(id) {
-        Service.get('gameideas/'+id).then(function(response) {
-          vm.gameidea = response;
-        });
-      }
-    }
-
-    function editGameidea(gameidea) {
-      vm.show = {};
-      vm.show.gameideasForm = true;
-      vm.slider.gradeLevel = getSliderValues('gradeLevel');
-      vm.slider.duration = getSliderValues('duration');
-      vm.slider.studentCount = getSliderValues('studentCount');
-    }
-
-    function updateGameidea() {
-      acceptNewSliderValues();
-      if(vm.gameideaForm.$valid) {
-        if(vm.gameidea.id) { // if edit (vm.gameidea already existed)
-          Service.update('gameideas/'+vm.gameidea.id,vm.gameidea).then(function(response) {
-            // in future, update tags here
-            // vm.gameideas.push(response);
-            // TODO: map the vm.gameideas array and replace old
-            // TODO: gameidea with response by id
-          });
-        } else {
-          Service.post('gameideas/'+vm.gameidea).then(function(response) {
-          });
-        }
-      }
     }
 
     // Private functions
@@ -166,23 +113,6 @@
             ceil: 40
           }
         };
-      }
-    }
-
-    function getColumnDefs() {
-      return [
-        { field: 'title', displayName: 'Game', width: '20%', enableFiltering: true, cellTemplate: getGameideaCellTemplate('title') },
-        { field: 'body', displayName: 'Intro', width: '35%', enableFiltering: false },
-        { field: 'gradeLevelRange', displayName: 'Grades', width: '10%', enableFiltering: false },
-        { field: 'studentCountRange', displayName: 'Students', width: '10%', enableFiltering: false },
-        { field: 'timeRange', displayName: 'Duration', width: '10%', enableFiltering: false },
-        { field: 'materials', displayName: 'Materials', width: '15%', enableFiltering: true }
-      ]
-    }
-
-    function getGameideaCellTemplate(column) {
-      if(column === 'title') {
-        return `<div class="ui-grid-cell-contents"><a class='gameideas-list-gameideas' ui-sref='gameidea({id: row.entity.id})'>{{grid.getCellValue(row, col)}}</a></div>`;
       }
     }
 

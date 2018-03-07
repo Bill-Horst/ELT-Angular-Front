@@ -24,8 +24,10 @@
     function deleteGameidea(gameidea) {
       Service.delete('gameideas/'+gameidea.id).then(function(response) {
         $state.go('gameideas');
+      }, function() {
+        alert('Delete failed');
+        $state.go('gameideas');
       });
-      // TODO: toastr message
     }
 
     function greaterThan(prop, val){
@@ -40,6 +42,9 @@
       Service.get('gameideas/'+params.id).then(function(response) {
         vm.gameidea = response;
         vm.safeGameIdeaBody = $sce.trustAsHtml(vm.gameidea.body);
+      }, function() {
+        alert('Attempt failed');
+        $state.go('gameideas');
       });
     }
 
