@@ -15,9 +15,13 @@
     // properties
     vm.gameidea = '';
     vm.slider = {};
+    vm.gameBodyExists = false;
+    vm.submitted = false;
+    vm.showInvalidMessage = false;
 
     // functions
     vm.updateGameidea = updateGameidea;
+    vm.goBack = goBack;
 
     // initialize controller
     initController();
@@ -26,25 +30,38 @@
 
     // define functions
     function updateGameidea() {
-      acceptNewSliderValues();
+
       vm.gameidea.body = (tinyMCE.get('game-body').getContent());
-      if(vm.gameideaForm.$valid) {
-        if(vm.gameidea.id) {
-          Service.update('gameideas/'+vm.gameidea.id,vm.gameidea).then(function(response) {
-            $state.go('gameideas');
-          }, function() {
-            alert('Update failed');
-            $state.go('gameideas');
-          });
-        } else {
-          Service.post('gameideas/',vm.gameidea).then(function(response) {
-            $state.go('gameideas');
-          }, function() {
-            alert('Save failed');
-            $state.go('gameideas');
-          });
+      console.log(vm.gameidea.body);
+
+      if(vm.gameidea.body === "" || vm.gameidea.body === null || vm.gameidea.body === undefined ||
+      vm.gameidea.materials === "" ||  vm.gameidea.materials === null || vm.gameidea.materials === undefined ||
+      vm.gameidea.title === "" || vm.gameidea.title === null || vm.gameidea.title === undefined) {
+        vm.showInvalidMessage = true;
+      } else {
+        acceptNewSliderValues();
+        if(vm.gameideaForm.$valid) {
+          if(vm.gameidea.id) {
+            Service.update('gameideas/'+vm.gameidea.id,vm.gameidea).then(function(response) {
+              $state.go('gameideas');
+            }, function() {
+              alert('Update failed');
+              $state.go('gameideas');
+            });
+          } else {
+            Service.post('gameideas/',vm.gameidea).then(function(response) {
+              $state.go('gameideas');
+            }, function() {
+              alert('Save failed');
+              $state.go('gameideas');
+            });
+          }
         }
       }
+    }
+
+    function goBack() {
+      $state.go('gameidea', {id: params.id});
     }
 
     // private

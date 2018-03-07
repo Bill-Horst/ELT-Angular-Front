@@ -31,7 +31,7 @@
       <div class='col-md-8'>
         <div class='title-intro-side'>
           <p class='game-title'>{{game.title}}</p>
-          <p class='game-description'>{{game.body | filterHTMLTags | limitTo: 240}}{{game.body.length > 240 ? '...' : ''}}</p>
+          <p class='game-description'>{{game.body | filterHTMLTags | filterNBSP | limitTo: 240}}{{game.body.length > 240 ? '...' : ''}}</p>
         </div>
       </div>
 

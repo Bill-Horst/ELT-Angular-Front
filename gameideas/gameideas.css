@@ -229,6 +229,13 @@ span.rz-bar.rz-selection {
   background: lightgrey;
   height: 1px;
 }
+
+.invalid-error-message {
+  margin-top: 5px;
+  text-decoration: underline;
+  text-transform: uppercase;
+  color: #ed7777;
+}
 /* END GAME IDEAS FORM */
 
 

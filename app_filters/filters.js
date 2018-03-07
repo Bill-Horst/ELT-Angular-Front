@@ -4,12 +4,19 @@
   angular
   .module('elt-app')
   .filter('filterHTMLTags', filterHTMLTags)
+  .filter('filterNBSP', filterNBSP)
   .filter('lessThan', lessThan)
   .filter('greaterThan', greaterThan);
 
   function filterHTMLTags() {
     return function (text) {
       return text ? String(text).replace(/<[^>]+>/gm, '') : '';
+    };
+  }
+
+  function filterNBSP() {
+    return function(text) {
+      return text ? String(text).replace(/&nbsp;/g, '') : '';
     };
   }
 
